@@ -1,0 +1,24 @@
+# Ignore Python cache & log
+__pycache__/
+*.py[cod]
+*.log
+
+# Ignore Jupyter notebook checkpoints (kalau pakai)
+.ipynb_checkpoints/
+
+# Ignore virtual environment
+.venv/
+env/
+ENV/
+
+# Ignore Streamlit config
+.streamlit/config.toml
+
+# Ignore data yang sensitif / sementara
+*.csv
+*.xlsx
+*.json
+
+# Ignore environment & secrets
+.env
+.DS_Store
