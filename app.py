@@ -68,11 +68,16 @@ def home_page():
         jenis = st.selectbox("Jenis Usaha", ["Makanan", "Fashion", "Elektronik", "Jasa", "Lainnya"])
         tahun = st.number_input("Tahun Berdiri", min_value=1950, max_value=2025, step=1)
 
-        submit = st.form_submit_button("🚀 Getting Started!", disabled=not st.session_state.valid_file)
+        submit = st.form_submit_button("🚀 Getting Started!")
         if submit:
-            st.session_state.info = {"nama": nama, "jenis": jenis, "tahun": tahun}
-            st.session_state.page = "dashboard"
-            st.experimental_rerun()
+            if not st.session_state.valid_file:
+                st.warning("⚠️ Harap upload file data transaksi yang valid terlebih dahulu.")
+            elif not nama.strip():
+                st.warning("⚠️ Nama usaha harus diisi sebelum melanjutkan.")
+            else:
+                st.session_state.info = {"nama": nama, "jenis": jenis, "tahun": tahun}
+                st.session_state.page = "dashboard"
+                st.rerun()
 
     # DOWNLOAD TEMPLATE
     st.markdown("### 📥 Unduh Format Template:")
@@ -131,10 +136,13 @@ def dashboard_page():
         kategori_list = df["Kategori"].unique().tolist()
         kategori_filter = st.multiselect("Pilih Kategori Produk", kategori_list, default=kategori_list)
 
-    filtered_df = df[
-        (df["Tanggal"].between(pd.to_datetime(date_range[0]), pd.to_datetime(date_range[1]))) &
-        (df["Kategori"].isin(kategori_filter))
-    ]
+    if len(date_range) == 2:
+        filtered_df = df[
+            (df["Tanggal"].between(pd.to_datetime(date_range[0]), pd.to_datetime(date_range[1]))) &
+            (df["Kategori"].isin(kategori_filter))
+        ]
+    else:
+        filtered_df = df.copy()
 
     # VISUALISASI
     st.subheader("📈 Visualisasi Penjualan")
@@ -180,7 +188,7 @@ def dashboard_page():
 
     if st.button("⬅️ Kembali ke Home"):
         st.session_state.page = "home"
-        st.experimental_rerun()
+        st.rerun()
 
 # ---------- ROUTING ---------- #
 if st.session_state.page == "home":
