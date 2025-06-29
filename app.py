@@ -552,7 +552,14 @@ def dashboard_page():
     if st.button("🛠️ Buat Summary Report"):
         st.session_state.generating_pdf = True
         st.session_state.pdf_ready = False
-        st.rerun()
+        if st.session_state.generating_pdf:
+            with st.spinner("📄 Sedang membuat laporan..."):
+                summary_html = generate_summary_report(...)  # <- ini generate isi HTML
+                pdf_path = download_pdf(summary_html)        # <- ini bikin file PDF
+                st.session_state.summary_html = summary_html
+                st.session_state.pdf_path = pdf_path
+                st.session_state.generating_pdf = False
+                st.session_state.pdf_ready = True
 
     # Proses generate PDF jika sedang dalam status "generating"
     if st.session_state.generating_pdf:
@@ -569,14 +576,14 @@ def dashboard_page():
         st.rerun()
 
     # Tampilkan tombol download jika PDF sudah siap
-    if st.session_state.pdf_ready and "pdf_path" in st.session_state:
-        with open(st.session_state.pdf_path, "rb") as f:
-            st.download_button(
-                label="📥 Download Summary Report (PDF)",
-                data=f,
-                file_name="SmartBiz_Business_Summary.pdf",
-                mime="application/pdf"
-            )
+    if "summary_html" in st.session_state and st.session_state.pdf_ready:
+        html_bytes = st.session_state.summary_html.encode("utf-8")
+        st.download_button(
+            label="📥 Download Summary Report (HTML)",
+            data=html_bytes,
+            file_name="SmartBiz_Summary_Report.html",
+            mime="text/html"
+        )
 
     # ⬅️ TOMBOL KEMBALI (Selalu tampil)
     st.markdown("---")
