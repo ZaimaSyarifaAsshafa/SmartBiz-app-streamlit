@@ -6,13 +6,13 @@ import plotly.express as px
 import plotly.io as pio
 import base64
 
-# ---------- SETUP ---------- #
 st.set_page_config(
     page_title='SmartBiz UMKM Dashboard',
     page_icon="📈",  
     initial_sidebar_state="expanded"
 )
 
+# ---------- SETUP ---------- #
 st.markdown("""
     <style>
         .stApp {
@@ -47,13 +47,8 @@ def home_page():
         """, unsafe_allow_html=True)
 
     with col2:
-        st.markdown("""
-            <div style="padding-top: 45px; text-align: center;">
-                <button style="padding: 15px 25px; font-size: 16px; border-radius: 10px; border: 1px solid #ccc; background-color: white;">
-                    ❓<br>Panduan
-                </button>
-            </div>
-        """, unsafe_allow_html=True)
+        if st.button("❔ Panduan"):
+            st.session_state["show_guide"] = True
 
     if st.session_state.get("show_guide", False):
         st.markdown("---")
