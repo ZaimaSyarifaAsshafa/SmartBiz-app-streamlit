@@ -260,7 +260,7 @@ def dashboard_page():
         st.plotly_chart(fig2, use_container_width=True)
 
     # --- Horizontal Bar Charts
-    custom_blue_pastel = [
+    custom_blue = [
         [0.0, "#a9d1f6"],  
         [0.5, "#75b2f9"],  
         [1.0, "#3681c4"]   
