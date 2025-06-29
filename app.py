@@ -54,27 +54,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Custom CSS untuk header
-st.markdown("""
-    <style>
-    .stApp > header {
-        background-color: #E2F9FF;  /* Warna biru muda */
-        color: #073E34;  /* Warna teks header */
-        padding: 10px 20px;
-        border-bottom: 2px solid #9AE1FF;  /* Garis bawah */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .stApp > header h1 {
-        font-size: 24px;
-        margin: 0;  /* Menghilangkan margin default */
-    }
-    .stApp > header p {
-        font-size: 16px;
-        margin: 0;  /* Menghilangkan margin default */  
-        color: #073E34;  /* Warna teks */
-    }   
-    </style>
-""", unsafe_allow_html=True)
 
 # ---------- SESSION STATE ---------- #
 if "generating_pdf" not in st.session_state:
@@ -113,7 +92,7 @@ def home_page():
             1. Isi informasi usaha: nama, jenis usaha, tahun berdiri.
             2. Upload file data transaksi (.csv/.xlsx) sesuai format.
             3. Jika format salah, gunakan template yang disediakan.
-            4. Klik tombol **Getting Started!** untuk melihat analisis dashboard.
+            4. Klik tombol **Mulai Analisis!** untuk melihat analisis dashboard.
             """)
             if st.button("❌ Tutup Panduan"):
                 st.session_state["show_guide"] = False
@@ -145,7 +124,7 @@ def home_page():
         jenis = st.selectbox("Jenis Usaha", ["Makanan", "Fashion", "Elektronik", "Jasa", "Lainnya"])
         tahun = st.number_input("Tahun Berdiri", min_value=1950, max_value=2025, step=1)
 
-        submit = st.form_submit_button("🚀 Getting Started!")
+        submit = st.form_submit_button("🚀 Mulai Analisis!")
         if submit:
             if not st.session_state.valid_file:
                 st.warning("⚠️ Harap upload file data transaksi yang valid terlebih dahulu.")
@@ -254,20 +233,30 @@ def dashboard_page():
 
     # --- 2 Kolom Visualisasi PIE
     st.markdown("### 📊 Distribusi Penjualan")
+    color_sequence = px.colors.qualitative.Safe
+
     col1, col2 = st.columns(2)
     with col1:
         pie1 = filtered_df.groupby("Nama Produk")["Total"].sum().reset_index()
-        st.plotly_chart(px.pie(pie1, names="Nama Produk", values="Total", title="Omset per Produk"), use_container_width=True)
-    with col2:
+        st.plotly_chart(
+            px.pie(pie1, names="Nama Produk", 
+                   values="Total",
+                   title="Omset per Produk",
+                   color_discrete_sequence=color_sequence),
+                   use_container_width=True)
         pie2 = filtered_df.groupby("Nama Produk")["Jumlah"].sum().reset_index()
-        st.plotly_chart(px.pie(pie2, names="Nama Produk", values="Jumlah", title="Order per Produk"), use_container_width=True)
+        st.plotly_chart(
+            px.pie(pie2, names="Nama Produk", 
+                   values="Jumlah", 
+                   title="Order per Produk", 
+                   color_discrete_sequence=color_sequence),
+                   use_container_width=True)
 
     # --- Horizontal Bar Charts
     custom_blue = [
-    [0.0, "#a6c8ff"],   # biru muda, tapi tetap kelihatan
-    [0.5, "#2A67AC"],   # biru sedang
-    [1.0, "#0D3868"]    # biru gelap
-    ]
+    [0.0, "#a6c8ff"],   
+    [0.5, "#2A67AC"],   
+    [1.0, "#0D3868"]]
 
     st.markdown("### 🥇 Ranking Produk & Pelanggan")
     col1, col2 = st.columns(2)
