@@ -16,10 +16,27 @@ st.set_page_config(
 st.markdown("""
     <style>
         .stApp {
-            background-color: #CBE9F5;
+            background-color: #F6FFFB;
         }
     </style>
 """, unsafe_allow_html=True)
+# Set default Plotly template
+pio.templates.default = "plotly_white"
+# Set default font for Plotly
+pio.templates["plotly_white"].layout.font.family = "Segoe UI, sans-serif"
+# Set default color for Plotly
+pio.templates["plotly_white"].layout.colorway = ["#68A1E1", "#2A67AC", "#0D3868", "#073E34", "#F0F0F0"]
+# Set default Plotly theme
+pio.templates["plotly_white"].layout.paper_bgcolor = "#F6FFFB"
+# Set default Plotly font size
+pio.templates["plotly_white"].layout.font.size = 14 
+# Set default Plotly axis title font size
+pio.templates["plotly_white"].layout.xaxis.title.font.size = 16
+pio.templates["plotly_white"].layout.yaxis.title.font.size = 16
+# Set default Plotly axis tick font size
+pio.templates["plotly_white"].layout.xaxis.tickfont.size = 14 
+# Set default Plotly legend font size
+pio.templates["plotly_white"].layout.legend.font.size = 14  
 
 # ---------- SESSION STATE ---------- #
 if "generating_pdf" not in st.session_state:
