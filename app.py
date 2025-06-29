@@ -5,10 +5,39 @@ from datetime import datetime
 import plotly.express as px
 import base64
 
+st.set_page_config(
+    page_title='SmartBiz UMKM Dashboard',
+    page_icon="📈",  
+    initial_sidebar_state="expanded"
+)
+
 # ---------- SETUP ---------- #
 st.set_page_config(page_title="SmartBiz", layout="wide", initial_sidebar_state="collapsed")
-blue_sky = "#87CEEB"
+
+# Warna background halaman
+blue_sky = "#E2F9FF"
 st.markdown(f"<style>body {{ background-color: {blue_sky}; }}</style>", unsafe_allow_html=True)
+
+# Custom style untuk input
+st.markdown("""
+    <style>
+    /* Semua input */
+    .stTextInput > div > div > input,
+    .stSelectbox > div > div,
+    .stNumberInput > div > div {
+        background-color: #F8FEFF;  /* ← perhatikan tanda ; di akhir */
+        color: black;
+        border: 1px solid #9AE1FF;
+        border-radius: 8px;
+    }
+
+    /* Label */
+    label {
+        color: #9AE1FF;
+        font-weight: bold;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 # ---------- SESSION STATE ---------- #
 if "generating_pdf" not in st.session_state:
@@ -111,7 +140,7 @@ def home_page():
         st.download_button("📄 Excel Format", excel_bytes.getvalue(), "format_template.xlsx")
 
     st.markdown("---")  
-    st.markdown("""<footer style='text-align: center; padding: 10px;'><p>© 2025 SmartBiz by Za. All rights reserved.</p></footer>""", unsafe_allow_html=True)
+    st.markdown("""<footer style='text-align: center; padding: 10px;'><p>© 2025 SmartBiz by Zai. All rights reserved.</p></footer>""", unsafe_allow_html=True)
 
 # ---------- HALAMAN: DASHBOARD ---------- #
 def plot_to_base64(fig):
