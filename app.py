@@ -233,9 +233,10 @@ def dashboard_page():
 
     # --- 2 Kolom Visualisasi PIE
     st.markdown("### 📊 Distribusi Penjualan")
-    color_sequence = px.colors.qualitative.Safe
+    color_sequence = px.colors.qualitative.Pastel
 
     col1, col2 = st.columns(2)
+    # Omset per Produk
     with col1:
         pie1 = filtered_df.groupby("Nama Produk")["Total"].sum().reset_index()
         fig1 = px.pie(
@@ -246,7 +247,8 @@ def dashboard_page():
             color_discrete_sequence=color_sequence
         )
         st.plotly_chart(fig1, use_container_width=True)
-
+    # Order per Produk
+    with col2:
         pie2 = filtered_df.groupby("Nama Produk")["Jumlah"].sum().reset_index()
         fig2 = px.pie(
             pie2,
