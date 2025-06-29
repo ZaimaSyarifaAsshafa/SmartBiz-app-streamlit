@@ -238,19 +238,24 @@ def dashboard_page():
     col1, col2 = st.columns(2)
     with col1:
         pie1 = filtered_df.groupby("Nama Produk")["Total"].sum().reset_index()
-        st.plotly_chart(
-            px.pie(pie1, names="Nama Produk", 
-                   values="Total",
-                   title="Omset per Produk",
-                   color_discrete_sequence=color_sequence),
-                   use_container_width=True)
+        fig1 = px.pie(
+            pie1,
+            names="Nama Produk",
+            values="Total",
+            title="Omset per Produk",
+            color_discrete_sequence=color_sequence
+        )
+        st.plotly_chart(fig1, use_container_width=True)
+
         pie2 = filtered_df.groupby("Nama Produk")["Jumlah"].sum().reset_index()
-        st.plotly_chart(
-            px.pie(pie2, names="Nama Produk", 
-                   values="Jumlah", 
-                   title="Order per Produk", 
-                   color_discrete_sequence=color_sequence),
-                   use_container_width=True)
+        fig2 = px.pie(
+            pie2,
+            names="Nama Produk",
+            values="Jumlah",
+            title="Order per Produk",
+            color_discrete_sequence=color_sequence
+        )
+        st.plotly_chart(fig2, use_container_width=True)
 
     # --- Horizontal Bar Charts
     custom_blue = [
