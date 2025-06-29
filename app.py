@@ -260,10 +260,11 @@ def dashboard_page():
         st.plotly_chart(fig2, use_container_width=True)
 
     # --- Horizontal Bar Charts
-    custom_blue = [
-    [0.0, "#a6c8ff"],   
-    [0.5, "#2A67AC"],   
-    [1.0, "#0D3868"]]
+    custom_blue_pastel = [
+        [0.0, "#a9d1f6"],  
+        [0.5, "#75b2f9"],  
+        [1.0, "#3681c4"]   
+    ]
 
     st.markdown("### 🥇 Ranking Produk & Pelanggan")
     col1, col2 = st.columns(2)
