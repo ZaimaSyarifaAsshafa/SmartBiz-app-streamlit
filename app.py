@@ -18,17 +18,32 @@ st.set_page_config(page_title="SmartBiz", layout="wide", initial_sidebar_state="
 blue_sky = "#E2F9FF"
 st.markdown(f"<style>body {{ background-color: {blue_sky}; }}</style>", unsafe_allow_html=True)
 
-# Custom style untuk input
+# Custom style untuk form input
 st.markdown("""
     <style>
-    /* Semua input */
+    /* Umum untuk semua input */
     .stTextInput > div > div > input,
     .stSelectbox > div > div,
-    .stNumberInput > div > div {
-        background-color: #F8FEFF;  /* ← perhatikan tanda ; di akhir */
+    .stNumberInput > div > div input {
+        background-color: #F8FEFF;  /* ganti abu jadi putih kebiruan */
         color: black;
         border: 1px solid #9AE1FF;
         border-radius: 8px;
+    }
+
+    /* Khusus tombol + dan - pada NumberInput */
+    .stNumberInput button {
+        background-color: #F8FEFF;
+        color: black;
+        border: 1px solid #9AE1FF;
+    }
+
+    /* Hover & fokus */
+    .stNumberInput > div > div input:focus,
+    .stTextInput > div > div > input:focus,
+    .stSelectbox > div > div:focus {
+        border: 2px solid #62c4e6;
+        outline: none;
     }
 
     /* Label */
@@ -36,6 +51,28 @@ st.markdown("""
         color: #9AE1FF;
         font-weight: bold;
     }
+    </style>
+""", unsafe_allow_html=True)
+
+# Custom CSS untuk header
+st.markdown("""
+    <style>
+    .stApp > header {
+        background-color: #E2F9FF;  /* Warna biru muda */
+        color: #073E34;  /* Warna teks header */
+        padding: 10px 20px;
+        border-bottom: 2px solid #9AE1FF;  /* Garis bawah */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .stApp > header h1 {
+        font-size: 24px;
+        margin: 0;  /* Menghilangkan margin default */
+    }
+    .stApp > header p {
+        font-size: 16px;
+        margin: 0;  /* Menghilangkan margin default */  
+        color: #073E34;  /* Warna teks */
+    }   
     </style>
 """, unsafe_allow_html=True)
 
