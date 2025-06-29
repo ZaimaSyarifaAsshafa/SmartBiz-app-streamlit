@@ -3,8 +3,6 @@ import pandas as pd
 from io import BytesIO
 from datetime import datetime
 import plotly.express as px
-from weasyprint import HTML
-from tempfile import NamedTemporaryFile
 import plotly.io as pio
 import base64
 
@@ -382,7 +380,6 @@ def dashboard_page():
         total_customer = filtered_df['Nama Customer'].nunique()
 
         produk_terlaris = pie1.loc[pie1['Total'].idxmax(), 'Nama Produk'] if not pie1.empty else "-"
-        customer_loyal = loyal.loc[0, 'Nama Customer'] if not loyal.empty else "-"
         bulan_tertinggi = monthly_order.loc[monthly_order['Jumlah'].idxmax(), 'Bulan'] if not monthly_order.empty else "-"
         hari_terbanyak = df_day_avg.loc[df_day_avg["Jumlah"].idxmax(), "Hari"] if not df_day_avg.empty else "-"
         hari_tersibuk_value = df_day_avg["Jumlah"].max() if not df_day_avg.empty else 0
@@ -543,47 +540,27 @@ def dashboard_page():
         """
         return html_report
     
-    def download_pdf(html_string):
-        with NamedTemporaryFile(delete=False, suffix=".pdf") as f:
-            HTML(string=html_string).write_pdf(f.name)
-            return f.name
-    
     # === Generate PDF
-    if st.button("🛠️ Buat Summary Report"):
-        st.session_state.generating_pdf = True
-        st.session_state.pdf_ready = False
-        if st.session_state.generating_pdf:
-            with st.spinner("📄 Sedang membuat laporan..."):
-                summary_html = generate_summary_report(...)  # <- ini generate isi HTML
-                pdf_path = download_pdf(summary_html)        # <- ini bikin file PDF
-                st.session_state.summary_html = summary_html
-                st.session_state.pdf_path = pdf_path
-                st.session_state.generating_pdf = False
-                st.session_state.pdf_ready = True
+    if st.button("🛠️ Generate HTML Summary Report"):
+        summary_html = generate_summary_report(
+            info, filtered_df, start_date, end_date,
+            pie1, pie2, loyal, df_day_avg, monthly_order, rank_cat
+        )
+        html_bytes = summary_html.encode("utf-8")
 
-    # Proses generate PDF jika sedang dalam status "generating"
-    if st.session_state.generating_pdf:
-        with st.spinner("📄 Sedang membuat laporan PDF..."):
-            summary_html = generate_summary_report(
-                info, filtered_df, start_date, end_date,
-                pie1, pie2, loyal, df_day_avg, monthly_order, rank_cat
-            )
-            st.session_state.summary_html = summary_html
-            pdf_path = download_pdf(summary_html)
-            st.session_state.pdf_path = pdf_path
-            st.session_state.generating_pdf = False
-            st.session_state.pdf_ready = True
-        st.rerun()
-
-    # Tampilkan tombol download jika PDF sudah siap
-    if "summary_html" in st.session_state and st.session_state.pdf_ready:
-        html_bytes = st.session_state.summary_html.encode("utf-8")
+        # Tombol download HTML
         st.download_button(
             label="📥 Download Summary Report (HTML)",
             data=html_bytes,
             file_name="SmartBiz_Summary_Report.html",
             mime="text/html"
         )
+
+        # Preview langsung di halaman Streamlit
+        st.markdown("### 🖥️ Preview Laporan")
+        st.components.v1.html(summary_html, height=600, scrolling=True)
+
+        st.info("✅ File HTML berhasil dibuat. Kamu bisa buka hasilnya di browser lalu tekan **Ctrl+P → Save as PDF** untuk menyimpannya.")
 
     # ⬅️ TOMBOL KEMBALI (Selalu tampil)
     st.markdown("---")
