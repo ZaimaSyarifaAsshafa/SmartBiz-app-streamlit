@@ -1,11 +1,10 @@
 import streamlit as st
 import pandas as pd
-from io import BytesIO
 from datetime import datetime
 import plotly.express as px
-import plotly.io as pio
 import base64
 
+# ---------- SETUP ---------- #
 st.set_page_config(
     page_title='SmartBiz UMKM Dashboard',
     page_icon="📈",  
@@ -14,22 +13,61 @@ st.set_page_config(
 
 st.markdown("""
     <style>
-        .stApp {
-            background-color: #CBE9F5;
+        /* style.css */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        html, body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
         }
 
-        button {
-            transition: background-color 0.3s ease;
+        .main-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #007bff;
+            margin-bottom: 0.1em;
         }
 
-        button:hover {
-            background-color: #d0ecff !important;  /* warna biru muda saat hover */
+        .subtitle {
+            font-size: 1.2em;
+            color: #6c757d;
+            margin-bottom: 1em;
         }
-    </style>
-""", unsafe_allow_html=True)
 
-# ---------- SETUP ---------- #
-st.set_page_config(page_title="SmartBiz", layout="wide", initial_sidebar_state="collapsed")
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            color: #343a40;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .custom-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .custom-btn:hover {
+            background-color: #0056b3;
+        }
+        </style>
+        """, unsafe_allow_html=True)
 
 # ---------- SESSION STATE ---------- #
 if "generating_pdf" not in st.session_state:
@@ -49,95 +87,72 @@ if "info" not in st.session_state:
 
 # ---------- HALAMAN: HOME ---------- #
 def home_page():
-    col1, col2 = st.columns([6, 1])
-    with col1:
-        st.markdown("""
-        <h1 style='margin-bottom:0;'>SmartBiz</h1>
-        <p style='margin-top:0; font-size:18px; color:gray;'>Solusi Analytics Sederhana untuk Bisnis Cerdas 💡</p>
-        """, unsafe_allow_html=True)
+    with st.container():
+        col1, col2 = st.columns([6, 1])
+        with col1:
+            st.markdown("<h1 class='main-title'>📊 SmartBiz</h1>", unsafe_allow_html=True)
+            st.markdown("<div class='subtitle'>Solusi Analytics Modern untuk Bisnis Cerdas</div>", unsafe_allow_html=True)
 
-    with col2:
-        st.markdown("""
-            <div style="padding-top: 45px; text-align: center;">
-                <button style="padding: 15px 25px; font-size: 16px; border-radius: 10px; border: 1px solid #ccc; background-color: white;">
-                    ❓<br>Panduan
-                </button>
-            </div>
-        """, unsafe_allow_html=True)
+        with col2:
+            if st.button("❓ Panduan"):
+                st.session_state["show_guide"] = True
 
-    if st.session_state.get("show_guide", False):
-        st.markdown("---")
-        with st.expander("📘 Panduan Penggunaan", expanded=True):
-            st.markdown("""
-            **Langkah-langkah:**
-            1. Isi informasi usaha: nama, jenis usaha, tahun berdiri.
-            2. Upload file data transaksi (.csv/.xlsx) sesuai format.
-            3. Jika format salah, gunakan template yang disediakan.
-            4. Klik tombol **Getting Started!** untuk melihat analisis dashboard.
-            """)
-            if st.button("❌ Tutup Panduan"):
-                st.session_state["show_guide"] = False
+        if st.session_state.get("show_guide", False):
+            st.markdown("---")
+            with st.expander("📘 Panduan Penggunaan", expanded=True):
+                st.markdown("""
+                **Langkah-langkah:**
+                1. Isi informasi usaha: nama, jenis usaha, tahun berdiri.
+                2. Upload file data transaksi (.csv/.xlsx) sesuai format.
+                3. Jika format salah, gunakan template yang disediakan.
+                4. Klik tombol **Mulai Analisis!** untuk melihat dashboard analitik.
+                """)
+                if st.button("❌ Tutup Panduan"):
+                    st.session_state["show_guide"] = False
 
-    # UPLOAD
-    st.subheader("📤 Upload File Data Transaksi")
-    file = st.file_uploader("Unggah file (.csv / .xlsx)", type=["csv", "xlsx"])
-    if file:
-        try:
-            df = pd.read_csv(file) if file.name.endswith(".csv") else pd.read_excel(file)
-            required_columns = {"Tanggal", "Nama Customer", "Nama Produk", "Kategori", "Jumlah", "Harga", "Total"}
-            if required_columns.issubset(df.columns):
-                st.session_state.valid_file = True
-                st.session_state.df = df
-                st.success("✅ Successfully uploaded!")
-            else:
+        # Upload File Section
+        st.markdown("<div class='card'>", unsafe_allow_html=True)
+        st.markdown("<div class='section-title'>📤 Upload File Data Transaksi</div>", unsafe_allow_html=True)
+        uploaded_file = st.file_uploader("Unggah file (.csv / .xlsx)", type=["csv", "xlsx"])
+        st.markdown("</div>", unsafe_allow_html=True)
+
+        if uploaded_file:
+            try:
+                df = pd.read_csv(uploaded_file) if uploaded_file.name.endswith(".csv") else pd.read_excel(uploaded_file)
+                required_columns = {"Tanggal", "Nama Customer", "Nama Produk", "Kategori", "Jumlah", "Harga", "Total"}
+                if required_columns.issubset(df.columns):
+                    st.session_state.valid_file = True
+                    st.session_state.df = df
+                    st.success("✅ File berhasil diunggah dan sesuai format.")
+                else:
+                    st.session_state.valid_file = False
+                    st.error("⚠️ Kolom tidak sesuai format. Gunakan template di bawah.")
+            except Exception as e:
                 st.session_state.valid_file = False
-                st.error("⚠️ Kolom tidak sesuai format. Gunakan file template di bawah.")
-        except Exception as e:
+                st.error(f"⚠️ Gagal membaca file: {e}")
+        else:
             st.session_state.valid_file = False
-            st.error(f"⚠️ Gagal membaca file: {e}")
-    else:
-        st.session_state.valid_file = False
 
-    # FORM
-    st.subheader("📋 Informasi Usaha")
-    with st.form(key="info_form"):
-        nama = st.text_input("Nama Usaha")
-        jenis = st.selectbox("Jenis Usaha", ["Makanan", "Fashion", "Elektronik", "Jasa", "Lainnya"])
-        tahun = st.number_input("Tahun Berdiri", min_value=1950, max_value=2025, step=1)
+        # Informasi Usaha Form
+        st.markdown("<div class='card'>", unsafe_allow_html=True)
+        st.markdown("<div class='section-title'>🏢 Informasi Usaha</div>", unsafe_allow_html=True)
+        with st.form(key="info_form"):
+            nama = st.text_input("Nama Usaha")
+            jenis = st.selectbox("Jenis Usaha", ["Makanan", "Fashion", "Elektronik", "Jasa", "Lainnya"])
+            tahun = st.number_input("Tahun Berdiri", min_value=1950, max_value=2025, step=1)
+            submit = st.form_submit_button("🚀 Mulai Analisis!")
 
-        submit = st.form_submit_button("🚀 Mulai Analisis!")
-        if submit:
-            if not st.session_state.valid_file:
-                st.warning("⚠️ Harap upload file data transaksi yang valid terlebih dahulu.")
-            elif not nama.strip():
-                st.warning("⚠️ Nama usaha harus diisi sebelum melanjutkan.")
-            else:
-                st.session_state.info = {"nama": nama, "jenis": jenis, "tahun": tahun}
-                st.session_state.page = "dashboard"
-                st.rerun()
+            if submit:
+                if not st.session_state.valid_file:
+                    st.warning("⚠️ Harap upload file data transaksi yang valid terlebih dahulu.")
+                elif not nama.strip():
+                    st.warning("⚠️ Nama usaha harus diisi sebelum melanjutkan.")
+                else:
+                    st.session_state.info = {"nama": nama, "jenis": jenis, "tahun": tahun}
+                    st.session_state.page = "dashboard"
+                    st.rerun()
+        st.markdown("</div>", unsafe_allow_html=True)
 
-    # DOWNLOAD TEMPLATE
-    st.markdown("### 📥 Unduh Format Template:")
-    colcsv, colsheet = st.columns(2)
-    template_data = pd.DataFrame({
-        "Tanggal": ["2024-01-01"],
-        "Nama Customer": ["Contoh Pelanggan"],
-        "Nama Produk": ["Contoh Produk"],
-        "Kategori": ["Minuman"],
-        "Jumlah": [5],
-        "Harga": [10000],
-        "Total": [50000]
-    })
-    with colcsv:
-        csv_buffer = template_data.to_csv(index=False)
-        st.download_button("📎 Format CSV", csv_buffer, "format_template.csv", mime="text/csv")
-    with colsheet:
-        excel_bytes = BytesIO()
-        template_data.to_excel(excel_bytes, index=False)
-        st.download_button("📄 Excel Format", excel_bytes.getvalue(), "format_template.xlsx")
-
-    st.markdown("---")  
-    st.markdown("""<footer style='text-align: center; padding: 10px;'><p>© 2025 SmartBiz by Zai. All rights reserved.</p></footer>""", unsafe_allow_html=True)
 
 # ---------- HALAMAN: DASHBOARD ---------- #
 def plot_to_base64(fig):
