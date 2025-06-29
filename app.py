@@ -12,16 +12,16 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ---------- SETUP ---------- #
-st.set_page_config(page_title="SmartBiz", layout="wide", initial_sidebar_state="collapsed")
 st.markdown("""
     <style>
-        body {
+        .stApp {
             background-color: #CBE9F5;
         }
     </style>
 """, unsafe_allow_html=True)
 
+# ---------- SETUP ---------- #
+st.set_page_config(page_title="SmartBiz", layout="wide", initial_sidebar_state="collapsed")
 
 # ---------- SESSION STATE ---------- #
 if "generating_pdf" not in st.session_state:
