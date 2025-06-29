@@ -3,6 +3,7 @@ import pandas as pd
 from io import BytesIO
 from datetime import datetime
 import plotly.express as px
+import plotly.io as pio
 import base64
 
 # ---------- SETUP ---------- #
@@ -14,80 +15,9 @@ st.set_page_config(
 
 st.markdown("""
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-        html, body, .stApp {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(to right, #e7f0fd, #e3f6f5);
-            color: #333;
+        .stApp {
+            background-color: #CBE9F5;
         }
-
-        .main-title {
-            font-size: 2.5em;
-            font-weight: 700;
-            color: #2c3e50;
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            color: #34495e;
-            margin-bottom: 25px;
-        }
-
-        .card {
-            background-color: white;
-            padding: 25px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-            margin-bottom: 30px;
-        }
-
-        .section-title {
-            font-size: 1.5em;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #2d3436;
-        }
-
-        .custom-btn {
-            background-color: #2e86de;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            border: none;
-            font-weight: 600;
-            transition: 0.3s ease;
-            cursor: pointer;
-        }
-
-        .custom-btn:hover {
-            background-color: #1e5fa5;
-        }
-
-        button {
-            border-radius: 8px !important;
-        }
-
-        .upload-section, .download-section {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .centered {
-            text-align: center;
-        }
-
-        .stTextInput > div > input {
-            border-radius: 8px;
-            border: 1px solid #ced6e0;
-        }
-
-        .stSelectbox, .stNumberInput {
-            border-radius: 8px;
-        }
-
     </style>
 """, unsafe_allow_html=True)
 
