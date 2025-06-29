@@ -3,40 +3,12 @@ import pandas as pd
 from io import BytesIO
 from datetime import datetime
 import plotly.express as px
-import plotly.io as pio
 import base64
 
-st.set_page_config(
-    page_title='SmartBiz UMKM Dashboard',
-    page_icon="📈",  
-    initial_sidebar_state="expanded"
-)
-
 # ---------- SETUP ---------- #
-st.markdown("""
-    <style>
-        .stApp {
-            background-color: #F6FFFB;
-        }
-    </style>
-""", unsafe_allow_html=True)
-# Set default Plotly template
-pio.templates.default = "plotly_white"
-# Set default font for Plotly
-pio.templates["plotly_white"].layout.font.family = "Segoe UI, sans-serif"
-# Set default color for Plotly
-pio.templates["plotly_white"].layout.colorway = ["#68A1E1", "#2A67AC", "#0D3868", "#073E34", "#F0F0F0"]
-# Set default Plotly theme
-pio.templates["plotly_white"].layout.paper_bgcolor = "#F6FFFB"
-# Set default Plotly font size
-pio.templates["plotly_white"].layout.font.size = 14 
-# Set default Plotly axis title font size
-pio.templates["plotly_white"].layout.xaxis.title.font.size = 16
-pio.templates["plotly_white"].layout.yaxis.title.font.size = 16
-# Set default Plotly axis tick font size
-pio.templates["plotly_white"].layout.xaxis.tickfont.size = 14 
-# Set default Plotly legend font size
-pio.templates["plotly_white"].layout.legend.font.size = 14  
+st.set_page_config(page_title="SmartBiz", layout="wide", initial_sidebar_state="collapsed")
+blue_sky = "#87CEEB"
+st.markdown(f"<style>body {{ background-color: {blue_sky}; }}</style>", unsafe_allow_html=True)
 
 # ---------- SESSION STATE ---------- #
 if "generating_pdf" not in st.session_state:
@@ -107,7 +79,7 @@ def home_page():
         jenis = st.selectbox("Jenis Usaha", ["Makanan", "Fashion", "Elektronik", "Jasa", "Lainnya"])
         tahun = st.number_input("Tahun Berdiri", min_value=1950, max_value=2025, step=1)
 
-        submit = st.form_submit_button("🚀 Mulai Analisis!")
+        submit = st.form_submit_button("🚀 Getting Started!")
         if submit:
             if not st.session_state.valid_file:
                 st.warning("⚠️ Harap upload file data transaksi yang valid terlebih dahulu.")
@@ -139,7 +111,7 @@ def home_page():
         st.download_button("📄 Excel Format", excel_bytes.getvalue(), "format_template.xlsx")
 
     st.markdown("---")  
-    st.markdown("""<footer style='text-align: center; padding: 10px;'><p>© 2025 SmartBiz by Zai. All rights reserved.</p></footer>""", unsafe_allow_html=True)
+    st.markdown("""<footer style='text-align: center; padding: 10px;'><p>© 2025 SmartBiz by Za. All rights reserved.</p></footer>""", unsafe_allow_html=True)
 
 # ---------- HALAMAN: DASHBOARD ---------- #
 def plot_to_base64(fig):
