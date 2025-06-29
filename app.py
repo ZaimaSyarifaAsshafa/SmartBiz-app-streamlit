@@ -3,6 +3,10 @@ import pandas as pd
 from io import BytesIO
 from datetime import datetime
 import plotly.express as px
+from weasyprint import HTML
+from tempfile import NamedTemporaryFile
+import plotly.io as pio
+import base64
 
 # ---------- SETUP ---------- #
 st.set_page_config(page_title="SmartBiz", layout="wide", initial_sidebar_state="collapsed")
@@ -10,6 +14,12 @@ blue_sky = "#87CEEB"
 st.markdown(f"<style>body {{ background-color: {blue_sky}; }}</style>", unsafe_allow_html=True)
 
 # ---------- SESSION STATE ---------- #
+if "generating_pdf" not in st.session_state:
+    st.session_state.generating_pdf = False
+
+if "pdf_ready" not in st.session_state:
+    st.session_state.pdf_ready = False
+
 if "page" not in st.session_state:
     st.session_state.page = "home"
 if "valid_file" not in st.session_state:
@@ -23,7 +33,11 @@ if "info" not in st.session_state:
 def home_page():
     col1, col2 = st.columns([6, 1])
     with col1:
-        st.markdown("<h1 style='margin-bottom:0;'>SmartBiz</h1>", unsafe_allow_html=True)
+        st.markdown("""
+        <h1 style='margin-bottom:0;'>SmartBiz</h1>
+        <p style='margin-top:0; font-size:18px; color:gray;'>Solusi Analytics Sederhana untuk Bisnis Cerdas 💡</p>
+        """, unsafe_allow_html=True)
+
     with col2:
         if st.button("❔ Panduan"):
             st.session_state["show_guide"] = True
@@ -100,9 +114,16 @@ def home_page():
         st.download_button("📄 Excel Format", excel_bytes.getvalue(), "format_template.xlsx")
 
     st.markdown("---")  
-    st.markdown("""<footer style='text-align: center; padding: 10px;'><p>© 2025 SmartBiz. All rights reserved.</p></footer>""", unsafe_allow_html=True)
+    st.markdown("""<footer style='text-align: center; padding: 10px;'><p>© 2025 SmartBiz by Za. All rights reserved.</p></footer>""", unsafe_allow_html=True)
 
 # ---------- HALAMAN: DASHBOARD ---------- #
+def plot_to_base64(fig):
+    img_bytes = fig.to_image(format="png", width=800, height=400)
+    return base64.b64encode(img_bytes).decode("utf-8")
+
+def img_tag(fig):
+    return f'<img src="data:image/png;base64,{plot_to_base64(fig)}" style="width:100%; margin-bottom:20px;" />'
+
 def dashboard_page():
     info = st.session_state.info
     df = st.session_state.df.copy()
@@ -181,8 +202,8 @@ def dashboard_page():
     # --- Horizontal Bar Charts
     custom_blue = [
     [0.0, "#a6c8ff"],   # biru muda, tapi tetap kelihatan
-    [0.5, "#468df2"],   # biru sedang
-    [1.0, "#1d4ed8"]    # biru gelap
+    [0.5, "#2A67AC"],   # biru sedang
+    [1.0, "#0D3868"]    # biru gelap
     ]
 
     st.markdown("### 🥇 Ranking Produk & Pelanggan")
@@ -257,11 +278,11 @@ def dashboard_page():
     # --- Insight
     bulan_tertinggi = monthly_order.loc[monthly_order['Jumlah'].idxmax(), 'Bulan'] if not monthly_order.empty else "Data tidak tersedia"
     produk_terlaris = pie1.loc[pie1['Total'].idxmax(), 'Nama Produk'] if not pie1.empty else "Data tidak tersedia"
-    pelanggan_loyal = loyal.loc[0, 'Nama Customer'] if not loyal.empty else "Data tidak tersedia"
-
-    # Insight tambahan
+    top_produk_jumlah_list = pie2.sort_values("Jumlah", ascending=False).head(3)["Nama Produk"].tolist() if not pie2.empty else []
+    top_produk_jumlah = ', '.join(top_produk_jumlah_list) if top_produk_jumlah_list else "Data tidak tersedia"
     total_sales = filtered_df["Total"].sum()
-    top_produk_jumlah = pie2.loc[pie2['Jumlah'].idxmax(), 'Nama Produk'] if not pie2.empty else "Data tidak tersedia"
+    top_produk_jumlah_list = pie2.sort_values("Jumlah", ascending=False).head(3)["Nama Produk"].tolist() if not pie2.empty else []
+    top_produk_jumlah = ', '.join(top_produk_jumlah_list) if top_produk_jumlah_list else "Data tidak tersedia"
     total_transaksi = filtered_df.shape[0]
     aov = filtered_df["Total"].mean() if not filtered_df.empty else 0
     jumlah_customer = filtered_df["Nama Customer"].nunique()
@@ -272,37 +293,293 @@ def dashboard_page():
     hari_terbanyak = df_day_avg.loc[df_day_avg["Jumlah"].idxmax(), "Hari"] if not df_day_avg.empty else "-"
     hari_tersibuk_value = df_day_avg["Jumlah"].max() if not df_day_avg.empty else 0
 
+    # --- Pareto Produk
+    pareto_produk = filtered_df.groupby("Nama Produk")["Total"].sum().sort_values(ascending=False)
+    pareto_produk_cumsum_pct = pareto_produk.cumsum() / pareto_produk.sum()
+    # Ambil yang kontribusi kumulatif ≤ 80%
+    produk_top_pareto = pareto_produk_cumsum_pct[pareto_produk_cumsum_pct <= 0.8].index.tolist()
+    pareto_produk_detail = pareto_produk.loc[produk_top_pareto]
+    # Buat DataFrame tabel
+    produk_pareto_tabel = pareto_produk_detail.reset_index()
+    produk_pareto_tabel.columns = ["Nama Produk", "Total"]
+    produk_pareto_tabel["Persen"] = (produk_pareto_tabel["Total"] / pareto_produk.sum()) * 100
+    produk_pareto_tabel = produk_pareto_tabel.sort_values("Total", ascending=False)
+
+    # --- Pareto Customer
+    pareto_customer = filtered_df.groupby("Nama Customer")["Total"].sum().sort_values(ascending=False)
+    pareto_customer_cumsum_pct = pareto_customer.cumsum() / pareto_customer.sum()
+    # Ambil yang kontribusi kumulatif ≤ 80%
+    customer_top_pareto = pareto_customer_cumsum_pct[pareto_customer_cumsum_pct <= 0.8].index.tolist()
+    pareto_customer_detail = pareto_customer.loc[customer_top_pareto]
+    # Buat DataFrame tabel
+    customer_pareto_tabel = pareto_customer_detail.reset_index()
+    customer_pareto_tabel.columns = ["Nama Customer", "Total"]
+    customer_pareto_tabel["Persen"] = (customer_pareto_tabel["Total"] / pareto_customer.sum()) * 100
+    customer_pareto_tabel = customer_pareto_tabel.sort_values("Total", ascending=False)
+
+    # --- DataFrame Produk
+    produk_pareto_df = pareto_produk_detail.reset_index()
+    produk_pareto_df.columns = ["Nama Produk", "Omset"]
+    produk_pareto_df["%"] = (produk_pareto_df["Omset"] / pareto_produk.sum()) * 100
+    produk_pareto_df["Omset"] = produk_pareto_df["Omset"].round(0).astype(int)
+    produk_pareto_df["%"] = produk_pareto_df["%"].round(1)
+
+    # --- DataFrame Customer
+    customer_pareto_df = pareto_customer_detail.reset_index()
+    customer_pareto_df.columns = ["Nama Customer", "Omset"]
+    customer_pareto_df["%"] = (customer_pareto_df["Omset"] / pareto_customer.sum()) * 100
+    customer_pareto_df["Omset"] = customer_pareto_df["Omset"].round(0).astype(int)
+    customer_pareto_df["%"] = customer_pareto_df["%"].round(1)
+
+    # --- INsight Pareto
+    st.markdown("### 📈 Analisis Pareto")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("### 📊 Detail Produk (Kontributor 80% Omset)")
+        st.dataframe(produk_pareto_df, height=300, use_container_width=True)
+    with col2:
+        st.markdown("### 👑 Detail Customer (Kontributor 80% Omset)")
+        st.dataframe(customer_pareto_df, height=300, use_container_width=True)
+
+
     # Insight ditampilkan
     st.markdown("### 💡 Insight Summary")
     st.info(f"""
-    ✅ **Bulan Tertinggi**: Puncak aktivitas penjualan terjadi di bulan **{bulan_tertinggi}** — bisa menjadi momentum untuk promosi musiman atau bundling produk.
-    
+    💰 **Omset & AOV**: Total omset sebesar Rp {total_sales:,.0f}, dengan rata-rata nilai transaksi (AOV) Rp {aov:,.0f} — menjadi tolok ukur performa bisnis.
+
+    🛒 **Transaksi & Customer**: Terdapat {total_transaksi} transaksi dari {jumlah_customer} pelanggan unik — bisa ditingkatkan dengan program loyalitas atau retensi.
+
+    📆 **Bulan Tertinggi**: Aktivitas penjualan tertinggi terjadi di bulan **{bulan_tertinggi}** — manfaatkan momen ini untuk promosi musiman.
+
+    🕐 **Hari Tersibuk**: Penjualan terbanyak terjadi setiap hari **{hari_terbanyak}** (rata-rata {hari_tersibuk_value:.1f} order/hari) — cocok untuk promo terbatas seperti flash sale atau happy hour.
+
+    📉 **Hari Sepi**: Hari sepi bisa dianalisis lebih lanjut (misalnya: jadwal buka, cuaca, promosi kurang aktif).
+
+    📈 **Rata-rata Order per Hari**: {transaksi_harian:.1f} order/hari — bisa dijadikan tolok ukur ritme harian.
+
+    📦 **Kategori Terpopuler**: Produk terbanyak terjual berasal dari kategori **{top_kategori}** — cocok jadi andalan lini utama.
+
     🔝 **Produk Terlaris**: Produk dengan omset tertinggi adalah **{produk_terlaris}**.
-    
-    🏆 **3 produk dengan kontribusi omset terbesar** adalah: `{', '.join(top3_produk)}` — pertimbangkan untuk dijadikan fokus utama promosi atau stok buffer.
-    
-    👥 **Customer Loyal**: Pelanggan dengan pembelanjaan tertinggi adalah **{pelanggan_loyal}** — dapat dimasukkan ke program loyalitas atau penawaran eksklusif.
-    
-    📦 **Kategori Terpopuler**: Kategori produk yang paling sering dipesan adalah **{top_kategori}** — ini bisa jadi andalan lini produk utama.
-    
-    🕐 **Hari Tersibuk**: Penjualan paling ramai terjadi setiap hari **{hari_terbanyak}** (rata-rata `{hari_tersibuk_value:.1f}` order/hari).  
-    
-    Gunakan hari tersebut untuk promosi terbatas seperti “Happy Hour” atau “Diskon Khusus Hari Ini”.
-    
-    📉 **Hari Sepi?** Hari dengan aktivitas order terendah bisa dianalisis lebih lanjut untuk mencari tahu penyebabnya (misal: jadwal buka, promosi kurang, cuaca, dll).
-    
-    💰 **AOV & Omset**: Rata-rata transaksi sebesar `Rp {aov:,.0f}`, dan total omset `Rp {total_sales:,.0f}` — dapat digunakan sebagai acuan untuk target bulanan atau benchmarking kinerja toko.
-    
-    🛒 **Total Transaksi**: Terdapat `{total_transaksi}` transaksi dari `{jumlah_customer}` pelanggan unik — pertimbangkan untuk meningkatkan retensi pelanggan melalui program loyalitas atau promosi khusus
+
+    🏆 **Top 3 Produk Omset**: {', '.join(top3_produk)} — layak diprioritaskan dalam stok, promosi, dan bundling.
+
+    🏅 **Top 3 Produk Jumlah Order**: {top_produk_jumlah} — fokus pada produk ini untuk meningkatkan volume penjualan.
+
+    📊 **Pareto Produk**: Hanya {len(produk_top_pareto)} produk (sekitar 20%) menyumbang >80% dari total omset — fokus promosi & stok pada produk ini untuk efisiensi.
+
+    👑 **Pareto Customer**: {len(customer_top_pareto)} pelanggan menyumbang >80% dari penjualan — ideal ditarget dengan program loyalitas atau benefit eksklusif.
     """)
 
-    # --- Placeholder ML & Chatbot
-    st.markdown("### 🧠 Rekomendasi AI")
-    st.warning("Fitur rekomendasi berbasis Machine Learning akan segera tersedia!")
+    # --- Download Report
+    def generate_summary_report(info, filtered_df, start_date, end_date, pie1, pie2, loyal, df_day_avg, monthly_order, rank_cat):
+        nama = info['nama']
+        jenis = info['jenis']
+        usia = datetime.now().year - int(info['tahun'])
 
-    st.markdown("### 🤖 Chatbot Konsultasi Bisnis")
-    st.warning("Fitur chatbot integrasi Hugging Face sedang dikembangkan.")
+        total_transaksi = filtered_df.shape[0]
+        total_omset = filtered_df['Total'].sum()
+        avg_order = filtered_df['Total'].mean() if not filtered_df.empty else 0
+        total_customer = filtered_df['Nama Customer'].nunique()
 
+        produk_terlaris = pie1.loc[pie1['Total'].idxmax(), 'Nama Produk'] if not pie1.empty else "-"
+        customer_loyal = loyal.loc[0, 'Nama Customer'] if not loyal.empty else "-"
+        bulan_tertinggi = monthly_order.loc[monthly_order['Jumlah'].idxmax(), 'Bulan'] if not monthly_order.empty else "-"
+        hari_terbanyak = df_day_avg.loc[df_day_avg["Jumlah"].idxmax(), "Hari"] if not df_day_avg.empty else "-"
+        hari_tersibuk_value = df_day_avg["Jumlah"].max() if not df_day_avg.empty else 0
+        hari_tersepi = df_day_avg.loc[df_day_avg["Jumlah"].idxmin(), "Hari"] if not df_day_avg.empty else "-"
+
+        html_report = f"""
+        <html>
+        <head>
+            <style>
+                body {{
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    padding: 40px;
+                    color: #333;
+                    background-color: #f9f9fb;
+                    line-height: 1.6;
+                    font-size: 15px;
+                }}
+
+                h1 {{
+                    color: #68A1E1;
+                    font-size: 26px;
+                    margin-bottom: 10px;
+                }}
+
+                h2 {{
+                    color: #333;
+                    font-size: 20px;
+                    margin-top: 30px;
+                    margin-bottom: 10px;
+                    border-bottom: 2px solid #e0e0e0;
+                    padding-bottom: 4px;
+                }}
+
+                ul {{
+                    padding-left: 25px;
+                    margin-top: 5px;
+                }}
+
+                li {{
+                    margin-bottom: 8px;
+                }}
+
+                b {{
+                    color: #073E34;
+                }}
+
+                .section {{
+                    background-color: #ffffff;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    padding: 20px;
+                    margin-bottom: 25px;
+                    box-shadow: 0px 1px 3px rgba(0,0,0,0.05);
+                }}
+
+                table {{
+                    border-collapse: collapse;
+                    width: 100%;
+                    margin-top: 10px;
+                }}
+
+                th, td {{
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: left;
+                    font-size: 14px;
+                }}
+
+                th {{
+                    background-color: #f0f0f0;
+                    color: #333;
+                }}
+
+                .scrollable-table {{
+                    overflow-x: auto; 
+                }}
+
+                .table-container {{
+                    display: flex;
+                    gap: 40px;
+                }}
+
+                .table-box {{
+                    flex: 1;
+                }}
+            </style>
+        </head>
+        <body>
+
+            <div class="section">
+                <h1>📊 SmartBiz Business Summary Report</h1>
+                <p style="margin-top:-5px;">Laporan ringkas performa usaha berbasis data transaksi</p>
+            </div>
+
+            <div class="section">
+                <h2>📋 Informasi Usaha</h2>
+                <ul>
+                    <li>🏢 <b>Nama Usaha:</b> {nama}</li>
+                    <li>🔧 <b>Jenis Usaha:</b> {jenis}</li>
+                    <li>📅 <b>Tahun Berdiri:</b> {info['tahun']}</li>
+                    <li>⏳ <b>Usia Usaha:</b> {usia} tahun</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>📌 Ringkasan Penjualan</h2>
+                <p>📆 Periode: <b>{start_date.date()}</b> s.d. <b>{end_date.date()}</b></p>
+                <ul>
+                    <li>🧾 <b>Total Transaksi:</b> {total_transaksi}</li>
+                    <li>💰 <b>Total Omset:</b> Rp {total_omset:,.0f}</li>
+                    <li>📈 <b>Rata-rata Transaksi (AOV):</b> Rp {avg_order:,.0f}</li>
+                    <li>🧍 <b>Jumlah Customer Unik:</b> {total_customer}</li>
+                    <li>🥇 <b>Produk Terlaris:</b> {produk_terlaris}</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>📅 Pola Order</h2>
+                <ul>
+                    <li>📊 <b>Bulan Paling Ramai:</b> {bulan_tertinggi}</li>
+                    <li>🔥 <b>Hari Tersibuk:</b> {hari_terbanyak} (avg {hari_tersibuk_value:.1f} order)</li>
+                    <li>😴 <b>Hari Tersepi:</b> {hari_tersepi}</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🧠 Insight & Rekomendasi</h2>
+                <ul>
+                    <li>🚀 Fokus promosi ke produk <b>{produk_terlaris}</b></li>
+                    <li>🏅 Fokus volume ke produk: <b>{top_produk_jumlah}</b></li>
+                    <li>📦 Manfaatkan hari <b>{hari_terbanyak}</b> untuk promo bundling atau flash sale</li>
+                    <li>🔍 Evaluasi performa hari <b>{hari_tersepi}</b></li>
+                </ul>
+            </div>
+
+            <div class="section">
+            <h2>📊 Analisis Pareto (80/20)</h2>
+            <p>Berikut adalah produk dan customer yang menyumbang lebih dari 80% total omset:</p>
+
+            <h3>📦 Detail Produk (Kontributor 80% Omset)</h3>
+            <div class="scrollable-table">
+                <table>
+                    <tr><th>Nama Produk</th><th>Omset</th><th>%</th></tr>
+                    {''.join([f"<tr><td>{row['Nama Produk']}</td><td>Rp {row['Total']:,.0f}</td><td>{row['Persen']:.1f}%</td></tr>" for _, row in produk_pareto_tabel.iterrows()])}
+                </table>
+            </div>
+
+            <h3>👥 Detail Customer (Kontributor 80% Omset)</h3>
+            <div class="scrollable-table">
+                <table>
+                    <tr><th>Nama Customer</th><th>Omset</th><th>%</th></tr>
+                    {''.join([f"<tr><td>{row['Nama Customer']}</td><td>Rp {row['Total']:,.0f}</td><td>{row['Persen']:.1f}%</td></tr>" for _, row in customer_pareto_tabel.iterrows()])}
+                </table>
+            </div>
+        </div>
+        </body>
+        </html>
+        """
+        return html_report
+    
+    def download_pdf(html_string):
+        with NamedTemporaryFile(delete=False, suffix=".pdf") as f:
+            HTML(string=html_string).write_pdf(f.name)
+            return f.name
+    
+    # === Generate PDF
+    if st.button("🛠️ Buat Summary Report"):
+        st.session_state.generating_pdf = True
+        st.session_state.pdf_ready = False
+        st.rerun()
+
+    # Proses generate PDF jika sedang dalam status "generating"
+    if st.session_state.generating_pdf:
+        with st.spinner("📄 Sedang membuat laporan PDF..."):
+            summary_html = generate_summary_report(
+                info, filtered_df, start_date, end_date,
+                pie1, pie2, loyal, df_day_avg, monthly_order, rank_cat
+            )
+            st.session_state.summary_html = summary_html
+            pdf_path = download_pdf(summary_html)
+            st.session_state.pdf_path = pdf_path
+            st.session_state.generating_pdf = False
+            st.session_state.pdf_ready = True
+        st.rerun()
+
+    # Tampilkan tombol download jika PDF sudah siap
+    if st.session_state.pdf_ready and "pdf_path" in st.session_state:
+        with open(st.session_state.pdf_path, "rb") as f:
+            st.download_button(
+                label="📥 Download Summary Report (PDF)",
+                data=f,
+                file_name="SmartBiz_Business_Summary.pdf",
+                mime="application/pdf"
+            )
+
+    # ⬅️ TOMBOL KEMBALI (Selalu tampil)
+    st.markdown("---")
     if st.button("⬅️ Kembali ke Home"):
         st.session_state.page = "home"
         st.rerun()
