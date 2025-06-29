@@ -17,6 +17,17 @@ st.markdown("""
         .stApp {
             background-color: #CBE9F5;
         }
+
+        .stTextInput > div, .stNumberInput > div, .stSelectbox > div,
+        .stButton > button, .stDownloadButton > button, .stDataFrame,
+        .stForm, .stMetric, .element-container, .stExpander, .stDateInput > div {
+            background-color: rgba(255, 255, 255, 0.8) !important;
+            border-radius: 8px;
+        }
+
+        .stTextInput input, .stSelectbox div, .stButton button {
+            color: black !important;
+        }
     </style>
 """, unsafe_allow_html=True)
 
@@ -92,7 +103,7 @@ def home_page():
         jenis = st.selectbox("Jenis Usaha", ["Makanan", "Fashion", "Elektronik", "Jasa", "Lainnya"])
         tahun = st.number_input("Tahun Berdiri", min_value=1950, max_value=2025, step=1)
 
-        submit = st.form_submit_button("🚀 Getting Started!")
+        submit = st.form_submit_button("🚀 Mulai Analisis!")
         if submit:
             if not st.session_state.valid_file:
                 st.warning("⚠️ Harap upload file data transaksi yang valid terlebih dahulu.")
