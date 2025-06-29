@@ -18,15 +18,12 @@ st.markdown("""
             background-color: #CBE9F5;
         }
 
-        .stTextInput > div, .stNumberInput > div, .stSelectbox > div,
-        .stButton > button, .stDownloadButton > button, .stDataFrame,
-        .stForm, .stMetric, .element-container, .stExpander, .stDateInput > div {
-            background-color: rgba(255, 255, 255, 0.8) !important;
-            border-radius: 8px;
+        button {
+            transition: background-color 0.3s ease;
         }
 
-        .stTextInput input, .stSelectbox div, .stButton button {
-            color: black !important;
+        button:hover {
+            background-color: #d0ecff !important;  /* warna biru muda saat hover */
         }
     </style>
 """, unsafe_allow_html=True)
@@ -60,8 +57,13 @@ def home_page():
         """, unsafe_allow_html=True)
 
     with col2:
-        if st.button("❔ Panduan"):
-            st.session_state["show_guide"] = True
+        st.markdown("""
+            <div style="padding-top: 45px; text-align: center;">
+                <button style="padding: 15px 25px; font-size: 16px; border-radius: 10px; border: 1px solid #ccc; background-color: white;">
+                    ❓<br>Panduan
+                </button>
+            </div>
+        """, unsafe_allow_html=True)
 
     if st.session_state.get("show_guide", False):
         st.markdown("---")
