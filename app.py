@@ -29,8 +29,8 @@ st.markdown("""
         color: black;
         border: 1px solid #9AE1FF;
         border-radius: 8px;
-    }
-
+    }      
+             
     /* Khusus tombol + dan - pada NumberInput */
     .stNumberInput button {
         background-color: #F8FEFF;
@@ -51,6 +51,16 @@ st.markdown("""
         color: #9AE1FF;
         font-weight: bold;
     }
+            
+    /* Ubah warna tag di multiselect */
+    .stMultiSelect [data-baseweb="tag"] {
+        background-color: #d0e7ff !important;  /* pastel biru */
+        color: #003366 !important;            /* teks biru tua */
+        border: none !important;
+    }
+    .stMultiSelect [data-baseweb="tag"] span {
+        color: #003366 !important;
+    }  
     </style>
 """, unsafe_allow_html=True)
 
