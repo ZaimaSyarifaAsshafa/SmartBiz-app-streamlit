@@ -87,7 +87,7 @@ st.markdown("""
         }
 
         .header-title {
-            font-size: 30px;
+            font-size: 56px;
             font-weight: 700;
             color: #1a2e44;
             margin: 0;
