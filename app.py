@@ -124,7 +124,7 @@ if "info" not in st.session_state:
 
 # ---------- HALAMAN: HOME ---------- #
 def home_page():
-    col1, col2, col3 = st.columns([1, 6])
+    col1, col2, col3 = st.columns([1, 6, 1])
     with col1:
         st.image("https://cdn-icons-png.flaticon.com/512/6062/6062646.png", width=70)
 
@@ -223,41 +223,42 @@ def home_page():
 
 # ---------- HALAMAN: DASHBOARD ---------- #
 # ---------- HEADER STYLE ---------- #
-st.markdown("""
-    <div class="header-container">
-        <div class="header-content">
-            <img src="https://cdn-icons-png.flaticon.com/512/6062/6062646.png" alt="Business Icon" width="60" style="margin-right: 15px;">
-            <div>
-                <p class="header-title">Dashboard Analisis Bisnis - SmartBiz</p>
-                <p class="header-subtitle">Berikut ini analisis bisnis kamu</p>
+def dashboard_page():
+    st.markdown("""
+        <div class="header-container">
+            <div class="header-content">
+                <img src="https://cdn-icons-png.flaticon.com/512/6062/6062646.png" alt="Business Icon" width="60" style="margin-right: 15px;">
+                <div>
+                    <p class="header-title">Dashboard Analisis Bisnis - SmartBiz</p>
+                    <p class="header-subtitle">Berikut ini analisis bisnis kamu</p>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <style>
-    .header-container {
-        background: linear-gradient(to right, #cfefff, #eaf8ff);
-        padding: 20px 30px;
-        border-radius: 10px;
-        margin-bottom: 25px;
-    }
-    .header-content {
-        display: flex;
-        align-items: center;
-    }
-    .header-title {
-        font-size: 26px;
-        font-weight: bold;
-        color: #1a3c5d;
-        margin: 0;
-    }
-    .header-subtitle {
-        font-size: 16px;
-        color: #446178;
-        margin: 0;
-    }
-    </style>
-""", unsafe_allow_html=True)
+
+        <style>
+        .header-container {
+            background: linear-gradient(to right, #cfefff, #eaf8ff);
+            padding: 20px 30px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+        }
+        .header-title {
+            font-size: 26px;
+            font-weight: bold;
+            color: #1a3c5d;
+            margin: 0;
+        }
+        .header-subtitle {
+            font-size: 16px;
+            color: #446178;
+            margin: 0;
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
 def plot_to_base64(fig):
     img_bytes = fig.to_image(format="png", width=800, height=400)
