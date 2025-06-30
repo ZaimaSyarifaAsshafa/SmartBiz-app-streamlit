@@ -1,0 +1,701 @@
+Tanggal,Nama Customer,Nama Produk,Kategori,Jumlah,Harga,Total
+2025-06-13,Rina,Casual Dress,Dress,3,144196,432588
+2025-02-27,Dewi,Scarf,Accessories,1,222964,222964
+2025-01-23,Nia,Mini Skirt,Skirt,1,87811,87811
+2025-01-24,Melani,Silk Blouse,Blouse,5,237815,1189075
+2025-01-07,Mira,Silk Blouse,Blouse,5,189974,949870
+2025-02-26,Elsa,Highwaist Pants,Pants,3,81703,245109
+2025-02-10,Dian,Pleated Skirt,Skirt,3,120758,362274
+2025-02-25,Tari,Party Dress,Dress,1,179595,179595
+2025-01-25,Anisa,Pleated Skirt,Skirt,5,149342,746710
+2025-01-12,Elsa,Cardigan,Outerwear,1,179230,179230
+2025-01-21,Mira,Linen Blouse,Blouse,5,174800,874000
+2025-05-28,Melani,Scarf,Accessories,1,92012,92012
+2025-06-19,Citra,Belt,Accessories,3,100916,302748
+2025-03-01,Rina,Mini Skirt,Skirt,3,198858,596574
+2025-06-12,Anisa,Maxi Dress,Dress,3,173132,519396
+2025-02-23,Laras,Scarf,Accessories,1,239680,239680
+2025-06-12,Putri,Cardigan,Outerwear,2,122834,245668
+2025-04-29,Vina,Linen Blouse,Blouse,5,137570,687850
+2025-06-25,Tari,Belt,Accessories,1,140043,140043
+2025-01-09,Tari,Mini Skirt,Skirt,3,97350,292050
+2025-02-24,Nia,Scarf,Accessories,3,135738,407214
+2025-06-17,Gita,Mini Skirt,Skirt,4,117452,469808
+2025-03-09,Dewi,Silk Blouse,Blouse,5,221289,1106445
+2025-03-09,Nia,Mini Skirt,Skirt,5,184700,923500
+2025-04-03,Citra,Maxi Dress,Dress,5,209372,1046860
+2025-01-24,Nadia,Party Dress,Dress,2,244481,488962
+2025-02-10,Dian,Highwaist Pants,Pants,1,180864,180864
+2025-04-08,Sari,Blazer,Outerwear,5,145906,729530
+2025-05-22,Ayu,Culottes,Pants,1,220763,220763
+2025-03-10,Tari,Party Dress,Dress,3,193971,581913
+2025-02-10,Elsa,Casual Dress,Dress,3,211225,633675
+2025-02-15,Lia,Party Dress,Dress,3,247496,742488
+2025-05-10,Sari,Silk Blouse,Blouse,2,178019,356038
+2025-02-11,Mira,Belt,Accessories,5,80149,400745
+2025-06-03,Tari,Blazer,Outerwear,1,109325,109325
+2025-04-03,Bella,Silk Blouse,Blouse,1,143143,143143
+2025-05-26,Sinta,Party Dress,Dress,4,98143,392572
+2025-05-17,Dewi,Maxi Dress,Dress,4,224127,896508
+2025-02-12,Laras,Cardigan,Outerwear,5,190923,954615
+2025-02-24,Mira,Belt,Accessories,2,161714,323428
+2025-04-13,Anisa,Blazer,Outerwear,5,198354,991770
+2025-01-31,Citra,Silk Blouse,Blouse,1,168627,168627
+2025-01-06,Nia,Cardigan,Outerwear,2,234256,468512
+2025-02-26,Ayu,Party Dress,Dress,1,140015,140015
+2025-01-18,Nadia,Pleated Skirt,Skirt,1,214782,214782
+2025-03-02,Laras,Culottes,Pants,4,136160,544640
+2025-05-19,Dewi,Scarf,Accessories,5,231050,1155250
+2025-05-02,Citra,Belt,Accessories,4,186708,746832
+2025-02-18,Rina,Party Dress,Dress,4,172876,691504
+2025-04-19,Dian,Blazer,Outerwear,1,249392,249392
+2025-01-26,Nadia,Mini Skirt,Skirt,3,108644,325932
+2025-03-05,Melani,Silk Blouse,Blouse,5,197601,988005
+2025-02-05,Dian,Maxi Dress,Dress,3,201275,603825
+2025-03-05,Sinta,Blazer,Outerwear,5,105666,528330
+2025-01-13,Mira,Casual Dress,Dress,1,141965,141965
+2025-02-12,Dian,Blazer,Outerwear,4,136032,544128
+2025-04-13,Nadia,Maxi Dress,Dress,4,80565,322260
+2025-04-10,Laras,Belt,Accessories,4,154776,619104
+2025-04-19,Mira,Culottes,Pants,4,120579,482316
+2025-02-18,Bella,Silk Blouse,Blouse,1,231828,231828
+2025-05-19,Nadia,Scarf,Accessories,3,94985,284955
+2025-01-13,Nia,Blazer,Outerwear,5,219231,1096155
+2025-02-10,Nadia,Cardigan,Outerwear,1,128712,128712
+2025-01-18,Sari,Party Dress,Dress,2,185847,371694
+2025-01-31,Nia,Silk Blouse,Blouse,5,235849,1179245
+2025-01-11,Sari,Party Dress,Dress,4,233006,932024
+2025-05-25,Lia,Pleated Skirt,Skirt,3,133545,400635
+2025-06-21,Tari,Silk Blouse,Blouse,3,183752,551256
+2025-02-03,Bella,Blazer,Outerwear,3,99016,297048
+2025-01-03,Elsa,Highwaist Pants,Pants,5,106209,531045
+2025-01-19,Mira,Silk Blouse,Blouse,5,149520,747600
+2025-02-03,Anisa,Party Dress,Dress,2,176869,353738
+2025-03-14,Putri,Blazer,Outerwear,5,159303,796515
+2025-06-06,Lia,Casual Dress,Dress,5,158480,792400
+2025-06-19,Rina,Maxi Dress,Dress,3,110258,330774
+2025-01-28,Mira,Maxi Dress,Dress,3,153860,461580
+2025-06-04,Melani,Scarf,Accessories,3,133371,400113
+2025-06-25,Laras,Cardigan,Outerwear,4,145829,583316
+2025-01-14,Sinta,Culottes,Pants,4,152530,610120
+2025-01-12,Ayu,Pleated Skirt,Skirt,2,247015,494030
+2025-03-09,Putri,Scarf,Accessories,4,224619,898476
+2025-06-30,Dian,Cardigan,Outerwear,1,109327,109327
+2025-01-20,Dewi,Cardigan,Outerwear,1,176787,176787
+2025-05-30,Mira,Maxi Dress,Dress,4,113409,453636
+2025-01-11,Bella,Pleated Skirt,Skirt,1,173797,173797
+2025-02-23,Citra,Culottes,Pants,1,172714,172714
+2025-05-24,Dian,Highwaist Pants,Pants,2,142059,284118
+2025-02-11,Putri,Mini Skirt,Skirt,1,127018,127018
+2025-03-27,Dian,Belt,Accessories,2,149941,299882
+2025-02-10,Rina,Mini Skirt,Skirt,1,203388,203388
+2025-02-26,Melani,Blazer,Outerwear,3,160003,480009
+2025-02-28,Citra,Casual Dress,Dress,2,184455,368910
+2025-03-26,Laras,Party Dress,Dress,3,172050,516150
+2025-06-14,Lia,Mini Skirt,Skirt,5,166808,834040
+2025-01-08,Rina,Linen Blouse,Blouse,2,232198,464396
+2025-03-09,Nadia,Party Dress,Dress,5,193918,969590
+2025-03-30,Tari,Mini Skirt,Skirt,5,214066,1070330
+2025-01-30,Vina,Highwaist Pants,Pants,2,146773,293546
+2025-01-12,Dian,Casual Dress,Dress,5,221151,1105755
+2025-06-25,Melani,Pleated Skirt,Skirt,4,98343,393372
+2025-06-20,Tari,Highwaist Pants,Pants,3,112669,338007
+2025-03-18,Lia,Linen Blouse,Blouse,4,165506,662024
+2025-04-14,Bella,Cardigan,Outerwear,2,130289,260578
+2025-04-18,Vina,Culottes,Pants,2,241353,482706
+2025-05-26,Bella,Mini Skirt,Skirt,5,80106,400530
+2025-03-19,Bella,Silk Blouse,Blouse,4,232039,928156
+2025-06-05,Tari,Blazer,Outerwear,4,195909,783636
+2025-06-22,Melani,Cardigan,Outerwear,4,124483,497932
+2025-06-18,Sinta,Linen Blouse,Blouse,5,245921,1229605
+2025-06-08,Tari,Party Dress,Dress,2,161374,322748
+2025-02-27,Melani,Maxi Dress,Dress,1,92114,92114
+2025-03-04,Gita,Highwaist Pants,Pants,1,199384,199384
+2025-04-17,Nia,Silk Blouse,Blouse,4,209598,838392
+2025-04-13,Citra,Maxi Dress,Dress,1,107941,107941
+2025-04-19,Citra,Maxi Dress,Dress,5,201778,1008890
+2025-01-13,Mira,Silk Blouse,Blouse,1,199658,199658
+2025-02-04,Elsa,Culottes,Pants,5,226518,1132590
+2025-06-02,Tari,Belt,Accessories,4,240603,962412
+2025-05-10,Dian,Cardigan,Outerwear,4,121722,486888
+2025-05-02,Elsa,Linen Blouse,Blouse,2,247159,494318
+2025-03-12,Lia,Blazer,Outerwear,2,151984,303968
+2025-04-23,Sinta,Scarf,Accessories,3,141471,424413
+2025-03-11,Tari,Pleated Skirt,Skirt,5,101122,505610
+2025-02-05,Dewi,Silk Blouse,Blouse,4,120056,480224
+2025-06-30,Melani,Party Dress,Dress,4,186849,747396
+2025-03-26,Mira,Blazer,Outerwear,4,96322,385288
+2025-02-22,Dian,Mini Skirt,Skirt,5,85120,425600
+2025-05-28,Vina,Blazer,Outerwear,1,172211,172211
+2025-03-18,Vina,Mini Skirt,Skirt,5,223165,1115825
+2025-06-04,Citra,Blazer,Outerwear,2,151548,303096
+2025-04-22,Gita,Casual Dress,Dress,4,168114,672456
+2025-06-21,Vina,Scarf,Accessories,2,202523,405046
+2025-02-02,Sari,Cardigan,Outerwear,1,183290,183290
+2025-06-01,Nia,Culottes,Pants,1,102006,102006
+2025-06-14,Dian,Maxi Dress,Dress,4,127639,510556
+2025-01-13,Laras,Mini Skirt,Skirt,3,135485,406455
+2025-04-27,Tari,Pleated Skirt,Skirt,4,152943,611772
+2025-04-18,Laras,Party Dress,Dress,4,85081,340324
+2025-05-19,Nadia,Pleated Skirt,Skirt,2,97987,195974
+2025-06-16,Nadia,Belt,Accessories,1,144823,144823
+2025-02-21,Ayu,Highwaist Pants,Pants,2,142533,285066
+2025-02-02,Gita,Culottes,Pants,1,227841,227841
+2025-02-25,Elsa,Scarf,Accessories,3,176703,530109
+2025-02-12,Sari,Highwaist Pants,Pants,1,122930,122930
+2025-03-21,Rina,Highwaist Pants,Pants,1,161777,161777
+2025-05-28,Vina,Mini Skirt,Skirt,2,99922,199844
+2025-06-01,Citra,Party Dress,Dress,3,237394,712182
+2025-01-31,Nia,Belt,Accessories,1,171017,171017
+2025-05-17,Dian,Culottes,Pants,3,98076,294228
+2025-05-10,Tari,Casual Dress,Dress,4,208503,834012
+2025-01-28,Dian,Pleated Skirt,Skirt,4,120105,480420
+2025-04-22,Putri,Scarf,Accessories,5,150800,754000
+2025-06-07,Mira,Belt,Accessories,4,201863,807452
+2025-04-22,Nia,Linen Blouse,Blouse,3,144355,433065
+2025-01-23,Laras,Blazer,Outerwear,2,201820,403640
+2025-05-26,Sari,Culottes,Pants,4,168184,672736
+2025-01-08,Gita,Pleated Skirt,Skirt,2,207808,415616
+2025-02-24,Anisa,Belt,Accessories,3,169217,507651
+2025-03-13,Sari,Scarf,Accessories,3,225697,677091
+2025-01-03,Lia,Silk Blouse,Blouse,1,143270,143270
+2025-04-15,Gita,Cardigan,Outerwear,2,204804,409608
+2025-06-15,Gita,Blazer,Outerwear,1,104393,104393
+2025-03-17,Citra,Mini Skirt,Skirt,2,160270,320540
+2025-06-19,Nia,Pleated Skirt,Skirt,4,225089,900356
+2025-05-16,Anisa,Mini Skirt,Skirt,5,166714,833570
+2025-04-01,Elsa,Linen Blouse,Blouse,3,145903,437709
+2025-03-01,Rina,Scarf,Accessories,2,162719,325438
+2025-01-31,Mira,Belt,Accessories,2,130211,260422
+2025-02-25,Gita,Linen Blouse,Blouse,5,217530,1087650
+2025-06-02,Bella,Party Dress,Dress,2,157659,315318
+2025-02-28,Anisa,Maxi Dress,Dress,3,83708,251124
+2025-05-17,Dewi,Linen Blouse,Blouse,1,94293,94293
+2025-05-22,Bella,Scarf,Accessories,2,247213,494426
+2025-05-06,Rina,Casual Dress,Dress,5,154537,772685
+2025-05-01,Gita,Blazer,Outerwear,3,128329,384987
+2025-01-14,Laras,Blazer,Outerwear,1,97129,97129
+2025-04-13,Gita,Party Dress,Dress,5,245005,1225025
+2025-06-25,Nadia,Maxi Dress,Dress,2,227545,455090
+2025-03-19,Sinta,Silk Blouse,Blouse,1,226295,226295
+2025-04-17,Sari,Highwaist Pants,Pants,5,139162,695810
+2025-05-14,Vina,Blazer,Outerwear,4,157949,631796
+2025-05-31,Dian,Linen Blouse,Blouse,5,242798,1213990
+2025-01-16,Sari,Scarf,Accessories,1,134470,134470
+2025-06-10,Melani,Linen Blouse,Blouse,1,121171,121171
+2025-03-03,Putri,Cardigan,Outerwear,1,121034,121034
+2025-01-01,Dian,Blazer,Outerwear,5,203184,1015920
+2025-03-16,Nadia,Silk Blouse,Blouse,3,154112,462336
+2025-06-29,Elsa,Party Dress,Dress,2,149351,298702
+2025-06-10,Nia,Culottes,Pants,2,191447,382894
+2025-01-30,Mira,Silk Blouse,Blouse,2,149633,299266
+2025-02-06,Sinta,Casual Dress,Dress,2,160638,321276
+2025-06-02,Nia,Linen Blouse,Blouse,4,112598,450392
+2025-04-30,Bella,Scarf,Accessories,4,151367,605468
+2025-05-09,Mira,Blazer,Outerwear,4,101087,404348
+2025-06-03,Nadia,Mini Skirt,Skirt,3,238259,714777
+2025-03-06,Ayu,Party Dress,Dress,2,230784,461568
+2025-05-31,Ayu,Belt,Accessories,3,231059,693177
+2025-01-11,Putri,Blazer,Outerwear,5,195927,979635
+2025-03-13,Putri,Highwaist Pants,Pants,4,246405,985620
+2025-05-06,Sinta,Blazer,Outerwear,3,187046,561138
+2025-03-27,Tari,Culottes,Pants,1,122159,122159
+2025-03-26,Dian,Scarf,Accessories,4,155554,622216
+2025-06-19,Vina,Belt,Accessories,5,89619,448095
+2025-04-27,Sinta,Pleated Skirt,Skirt,3,164744,494232
+2025-01-30,Vina,Cardigan,Outerwear,1,222237,222237
+2025-04-29,Dian,Casual Dress,Dress,2,215905,431810
+2025-04-03,Sari,Belt,Accessories,4,243947,975788
+2025-04-24,Nadia,Silk Blouse,Blouse,3,223974,671922
+2025-02-03,Bella,Blazer,Outerwear,4,111831,447324
+2025-01-08,Sari,Belt,Accessories,2,121517,243034
+2025-03-21,Mira,Casual Dress,Dress,5,186952,934760
+2025-01-24,Citra,Party Dress,Dress,4,110793,443172
+2025-06-15,Dewi,Blazer,Outerwear,3,213397,640191
+2025-06-30,Laras,Mini Skirt,Skirt,4,203789,815156
+2025-03-04,Elsa,Cardigan,Outerwear,2,180554,361108
+2025-02-18,Sari,Cardigan,Outerwear,2,98300,196600
+2025-03-12,Dian,Pleated Skirt,Skirt,5,150037,750185
+2025-01-01,Bella,Scarf,Accessories,3,233862,701586
+2025-05-29,Gita,Maxi Dress,Dress,4,221185,884740
+2025-05-04,Anisa,Pleated Skirt,Skirt,5,222456,1112280
+2025-04-07,Elsa,Pleated Skirt,Skirt,2,142601,285202
+2025-05-27,Vina,Silk Blouse,Blouse,4,91441,365764
+2025-03-23,Gita,Scarf,Accessories,4,181208,724832
+2025-06-19,Dewi,Blazer,Outerwear,1,113094,113094
+2025-05-09,Nia,Pleated Skirt,Skirt,1,195423,195423
+2025-01-26,Lia,Blazer,Outerwear,1,117789,117789
+2025-04-15,Dewi,Party Dress,Dress,4,149474,597896
+2025-03-28,Sari,Scarf,Accessories,4,101054,404216
+2025-03-26,Mira,Mini Skirt,Skirt,3,244311,732933
+2025-05-05,Mira,Casual Dress,Dress,5,97936,489680
+2025-03-02,Bella,Silk Blouse,Blouse,1,193763,193763
+2025-01-26,Rina,Blazer,Outerwear,2,158503,317006
+2025-01-08,Nadia,Pleated Skirt,Skirt,1,156904,156904
+2025-04-02,Anisa,Mini Skirt,Skirt,2,144014,288028
+2025-05-16,Dian,Highwaist Pants,Pants,2,124560,249120
+2025-02-14,Sinta,Highwaist Pants,Pants,4,242453,969812
+2025-06-24,Citra,Blazer,Outerwear,5,117517,587585
+2025-03-01,Elsa,Culottes,Pants,3,200473,601419
+2025-03-07,Ayu,Belt,Accessories,4,155400,621600
+2025-06-23,Mira,Maxi Dress,Dress,1,195796,195796
+2025-03-30,Nia,Linen Blouse,Blouse,4,145561,582244
+2025-04-27,Bella,Silk Blouse,Blouse,4,206670,826680
+2025-01-28,Citra,Mini Skirt,Skirt,5,174098,870490
+2025-05-28,Bella,Scarf,Accessories,3,85751,257253
+2025-06-18,Vina,Linen Blouse,Blouse,1,228354,228354
+2025-06-25,Nadia,Highwaist Pants,Pants,4,155024,620096
+2025-02-28,Sari,Belt,Accessories,3,137410,412230
+2025-06-12,Melani,Highwaist Pants,Pants,3,115855,347565
+2025-06-10,Rina,Culottes,Pants,1,160984,160984
+2025-04-23,Nadia,Highwaist Pants,Pants,3,114448,343344
+2025-01-24,Bella,Pleated Skirt,Skirt,4,126042,504168
+2025-02-21,Dewi,Belt,Accessories,5,175907,879535
+2025-05-16,Lia,Linen Blouse,Blouse,2,147363,294726
+2025-05-04,Bella,Scarf,Accessories,3,110191,330573
+2025-04-30,Sinta,Maxi Dress,Dress,2,184179,368358
+2025-05-23,Anisa,Party Dress,Dress,4,83648,334592
+2025-03-09,Mira,Party Dress,Dress,4,176622,706488
+2025-06-22,Laras,Highwaist Pants,Pants,4,247391,989564
+2025-04-06,Rina,Culottes,Pants,2,203594,407188
+2025-01-07,Sari,Cardigan,Outerwear,3,239929,719787
+2025-02-26,Sinta,Culottes,Pants,4,159217,636868
+2025-06-16,Dian,Party Dress,Dress,2,91887,183774
+2025-01-10,Bella,Blazer,Outerwear,1,105478,105478
+2025-03-02,Mira,Maxi Dress,Dress,4,198919,795676
+2025-04-05,Mira,Mini Skirt,Skirt,5,120507,602535
+2025-04-17,Rina,Blazer,Outerwear,5,186985,934925
+2025-03-13,Nadia,Scarf,Accessories,3,136955,410865
+2025-04-24,Elsa,Silk Blouse,Blouse,3,106045,318135
+2025-06-25,Anisa,Cardigan,Outerwear,3,95872,287616
+2025-04-12,Laras,Silk Blouse,Blouse,1,199201,199201
+2025-01-24,Melani,Culottes,Pants,5,85598,427990
+2025-01-13,Tari,Silk Blouse,Blouse,2,228000,456000
+2025-02-22,Sinta,Belt,Accessories,5,134305,671525
+2025-05-31,Melani,Silk Blouse,Blouse,3,118680,356040
+2025-06-02,Ayu,Linen Blouse,Blouse,2,114076,228152
+2025-05-19,Laras,Belt,Accessories,2,108816,217632
+2025-06-19,Ayu,Maxi Dress,Dress,1,173911,173911
+2025-03-02,Nia,Pleated Skirt,Skirt,1,125677,125677
+2025-03-09,Nadia,Maxi Dress,Dress,4,217910,871640
+2025-01-30,Sinta,Blazer,Outerwear,4,174906,699624
+2025-05-12,Nia,Party Dress,Dress,4,212078,848312
+2025-02-26,Sari,Casual Dress,Dress,5,159070,795350
+2025-04-28,Ayu,Casual Dress,Dress,4,185281,741124
+2025-04-20,Rina,Blazer,Outerwear,4,99265,397060
+2025-01-21,Tari,Highwaist Pants,Pants,2,97218,194436
+2025-02-02,Laras,Highwaist Pants,Pants,5,223748,1118740
+2025-03-25,Vina,Highwaist Pants,Pants,5,157305,786525
+2025-04-27,Lia,Highwaist Pants,Pants,4,105999,423996
+2025-06-29,Rina,Culottes,Pants,5,136367,681835
+2025-04-21,Elsa,Silk Blouse,Blouse,4,168848,675392
+2025-04-27,Vina,Mini Skirt,Skirt,1,161932,161932
+2025-04-20,Tari,Culottes,Pants,3,178120,534360
+2025-02-09,Gita,Party Dress,Dress,1,102377,102377
+2025-01-24,Dian,Party Dress,Dress,3,114108,342324
+2025-05-23,Nadia,Highwaist Pants,Pants,5,227241,1136205
+2025-03-26,Rina,Mini Skirt,Skirt,3,190870,572610
+2025-01-14,Bella,Highwaist Pants,Pants,3,172181,516543
+2025-01-27,Nia,Cardigan,Outerwear,2,120561,241122
+2025-06-18,Gita,Silk Blouse,Blouse,1,171780,171780
+2025-05-23,Anisa,Party Dress,Dress,3,230496,691488
+2025-02-27,Dian,Cardigan,Outerwear,5,240844,1204220
+2025-06-22,Mira,Casual Dress,Dress,5,150109,750545
+2025-01-08,Putri,Linen Blouse,Blouse,3,169082,507246
+2025-03-31,Ayu,Maxi Dress,Dress,2,228457,456914
+2025-06-18,Vina,Party Dress,Dress,2,245982,491964
+2025-01-08,Sinta,Scarf,Accessories,5,136395,681975
+2025-04-07,Dian,Blazer,Outerwear,3,121263,363789
+2025-04-05,Bella,Scarf,Accessories,3,228791,686373
+2025-06-02,Sinta,Casual Dress,Dress,2,121264,242528
+2025-06-08,Nadia,Culottes,Pants,1,151330,151330
+2025-04-24,Dian,Blazer,Outerwear,5,195879,979395
+2025-04-17,Laras,Silk Blouse,Blouse,5,109836,549180
+2025-03-30,Dian,Party Dress,Dress,3,235486,706458
+2025-05-05,Lia,Culottes,Pants,3,91905,275715
+2025-02-26,Vina,Highwaist Pants,Pants,1,82015,82015
+2025-02-22,Bella,Silk Blouse,Blouse,2,146982,293964
+2025-03-16,Tari,Party Dress,Dress,1,210386,210386
+2025-04-21,Putri,Maxi Dress,Dress,4,219613,878452
+2025-06-30,Citra,Cardigan,Outerwear,5,172842,864210
+2025-01-19,Vina,Scarf,Accessories,1,194352,194352
+2025-01-05,Elsa,Party Dress,Dress,3,230931,692793
+2025-04-20,Nia,Mini Skirt,Skirt,4,155894,623576
+2025-01-30,Vina,Casual Dress,Dress,3,125055,375165
+2025-06-08,Elsa,Scarf,Accessories,3,103102,309306
+2025-04-22,Rina,Silk Blouse,Blouse,4,234369,937476
+2025-04-13,Lia,Party Dress,Dress,4,161336,645344
+2025-03-28,Citra,Pleated Skirt,Skirt,2,100022,200044
+2025-05-11,Rina,Cardigan,Outerwear,5,130830,654150
+2025-03-31,Anisa,Scarf,Accessories,2,141936,283872
+2025-01-27,Dewi,Linen Blouse,Blouse,2,125481,250962
+2025-06-04,Dewi,Belt,Accessories,1,126437,126437
+2025-06-10,Gita,Blazer,Outerwear,5,231904,1159520
+2025-04-25,Nia,Culottes,Pants,5,164727,823635
+2025-06-10,Tari,Maxi Dress,Dress,4,97900,391600
+2025-05-01,Elsa,Culottes,Pants,3,152004,456012
+2025-06-01,Nadia,Pleated Skirt,Skirt,5,99448,497240
+2025-03-21,Elsa,Blazer,Outerwear,1,94913,94913
+2025-04-05,Bella,Party Dress,Dress,1,241220,241220
+2025-06-02,Lia,Mini Skirt,Skirt,4,232129,928516
+2025-05-22,Nadia,Blazer,Outerwear,5,129345,646725
+2025-03-24,Sari,Blazer,Outerwear,5,119547,597735
+2025-01-16,Elsa,Party Dress,Dress,3,102106,306318
+2025-05-10,Putri,Casual Dress,Dress,2,194755,389510
+2025-04-23,Lia,Cardigan,Outerwear,5,121614,608070
+2025-04-04,Anisa,Linen Blouse,Blouse,4,187156,748624
+2025-03-28,Sari,Casual Dress,Dress,3,97278,291834
+2025-03-26,Rina,Cardigan,Outerwear,4,154487,617948
+2025-03-06,Sari,Maxi Dress,Dress,3,101365,304095
+2025-05-30,Dewi,Pleated Skirt,Skirt,3,182749,548247
+2025-02-03,Sari,Scarf,Accessories,1,161155,161155
+2025-05-24,Vina,Culottes,Pants,3,113500,340500
+2025-06-21,Lia,Party Dress,Dress,4,213297,853188
+2025-04-03,Ayu,Pleated Skirt,Skirt,3,127254,381762
+2025-02-24,Tari,Belt,Accessories,4,130333,521332
+2025-02-27,Dewi,Maxi Dress,Dress,1,157540,157540
+2025-01-26,Lia,Belt,Accessories,5,218027,1090135
+2025-01-10,Tari,Belt,Accessories,5,114353,571765
+2025-06-02,Vina,Maxi Dress,Dress,2,127407,254814
+2025-06-27,Sari,Belt,Accessories,2,194733,389466
+2025-01-12,Dian,Pleated Skirt,Skirt,2,196444,392888
+2025-06-06,Bella,Belt,Accessories,4,141342,565368
+2025-05-17,Citra,Linen Blouse,Blouse,4,130860,523440
+2025-04-05,Nia,Blazer,Outerwear,4,153864,615456
+2025-04-08,Lia,Cardigan,Outerwear,4,122482,489928
+2025-02-21,Sari,Maxi Dress,Dress,3,93678,281034
+2025-06-14,Gita,Pleated Skirt,Skirt,5,106893,534465
+2025-05-13,Rina,Linen Blouse,Blouse,1,122024,122024
+2025-03-11,Elsa,Cardigan,Outerwear,2,194680,389360
+2025-01-24,Citra,Blazer,Outerwear,3,86991,260973
+2025-04-17,Nadia,Mini Skirt,Skirt,5,178031,890155
+2025-03-02,Vina,Party Dress,Dress,3,138861,416583
+2025-01-08,Tari,Party Dress,Dress,3,118285,354855
+2025-02-05,Nadia,Linen Blouse,Blouse,4,116383,465532
+2025-06-30,Gita,Blazer,Outerwear,5,81376,406880
+2025-01-21,Ayu,Linen Blouse,Blouse,2,119195,238390
+2025-05-21,Sari,Cardigan,Outerwear,4,109146,436584
+2025-03-15,Citra,Linen Blouse,Blouse,1,92517,92517
+2025-03-03,Dian,Culottes,Pants,5,199829,999145
+2025-01-17,Rina,Blazer,Outerwear,5,220523,1102615
+2025-01-05,Lia,Highwaist Pants,Pants,2,117637,235274
+2025-03-16,Dian,Casual Dress,Dress,5,172488,862440
+2025-03-03,Nia,Mini Skirt,Skirt,2,102443,204886
+2025-05-15,Anisa,Party Dress,Dress,5,222627,1113135
+2025-05-10,Lia,Cardigan,Outerwear,1,182355,182355
+2025-05-01,Nadia,Culottes,Pants,4,177858,711432
+2025-03-06,Ayu,Pleated Skirt,Skirt,1,170387,170387
+2025-03-03,Rina,Belt,Accessories,5,167167,835835
+2025-02-04,Nadia,Pleated Skirt,Skirt,5,168748,843740
+2025-06-14,Putri,Belt,Accessories,4,205444,821776
+2025-06-11,Putri,Belt,Accessories,2,96541,193082
+2025-04-28,Nadia,Linen Blouse,Blouse,2,91483,182966
+2025-02-21,Nadia,Pleated Skirt,Skirt,3,215104,645312
+2025-04-12,Mira,Blazer,Outerwear,3,89599,268797
+2025-06-15,Melani,Linen Blouse,Blouse,3,92531,277593
+2025-06-17,Tari,Linen Blouse,Blouse,1,176474,176474
+2025-04-22,Vina,Scarf,Accessories,4,181356,725424
+2025-03-28,Putri,Blazer,Outerwear,4,176297,705188
+2025-05-13,Laras,Belt,Accessories,1,191280,191280
+2025-01-21,Dian,Highwaist Pants,Pants,2,222992,445984
+2025-03-17,Tari,Party Dress,Dress,1,165962,165962
+2025-06-19,Bella,Linen Blouse,Blouse,4,237973,951892
+2025-04-20,Putri,Scarf,Accessories,4,172155,688620
+2025-04-25,Nadia,Scarf,Accessories,3,241179,723537
+2025-04-22,Laras,Culottes,Pants,1,99671,99671
+2025-06-21,Vina,Pleated Skirt,Skirt,5,121939,609695
+2025-01-08,Dewi,Highwaist Pants,Pants,4,89122,356488
+2025-02-02,Sinta,Silk Blouse,Blouse,3,174935,524805
+2025-04-09,Nia,Casual Dress,Dress,5,120222,601110
+2025-06-23,Elsa,Pleated Skirt,Skirt,3,196376,589128
+2025-01-20,Nia,Maxi Dress,Dress,5,176193,880965
+2025-04-12,Tari,Culottes,Pants,3,145434,436302
+2025-01-30,Ayu,Scarf,Accessories,2,210821,421642
+2025-05-13,Vina,Cardigan,Outerwear,1,148623,148623
+2025-03-08,Elsa,Silk Blouse,Blouse,5,154862,774310
+2025-06-27,Gita,Silk Blouse,Blouse,1,115580,115580
+2025-01-19,Elsa,Maxi Dress,Dress,4,103013,412052
+2025-06-24,Tari,Culottes,Pants,3,97023,291069
+2025-05-21,Mira,Linen Blouse,Blouse,3,121289,363867
+2025-06-29,Putri,Belt,Accessories,3,213367,640101
+2025-02-27,Rina,Silk Blouse,Blouse,2,142058,284116
+2025-05-07,Ayu,Pleated Skirt,Skirt,5,230019,1150095
+2025-04-05,Elsa,Belt,Accessories,5,114018,570090
+2025-06-06,Sinta,Party Dress,Dress,3,184375,553125
+2025-05-03,Lia,Mini Skirt,Skirt,4,230706,922824
+2025-01-19,Dewi,Pleated Skirt,Skirt,1,197958,197958
+2025-04-30,Lia,Pleated Skirt,Skirt,2,224520,449040
+2025-06-13,Nia,Maxi Dress,Dress,2,193408,386816
+2025-05-09,Nadia,Party Dress,Dress,5,120112,600560
+2025-03-19,Putri,Maxi Dress,Dress,3,139105,417315
+2025-03-30,Lia,Linen Blouse,Blouse,1,145694,145694
+2025-02-20,Mira,Linen Blouse,Blouse,2,243845,487690
+2025-03-19,Sari,Cardigan,Outerwear,1,211746,211746
+2025-06-14,Putri,Highwaist Pants,Pants,5,120421,602105
+2025-02-13,Sari,Scarf,Accessories,5,168504,842520
+2025-05-25,Nadia,Casual Dress,Dress,1,91917,91917
+2025-06-14,Nia,Linen Blouse,Blouse,2,229982,459964
+2025-04-17,Sari,Culottes,Pants,1,210557,210557
+2025-06-10,Mira,Linen Blouse,Blouse,3,206601,619803
+2025-03-04,Vina,Linen Blouse,Blouse,4,99129,396516
+2025-06-26,Nadia,Maxi Dress,Dress,4,188952,755808
+2025-05-04,Elsa,Silk Blouse,Blouse,3,239032,717096
+2025-02-06,Tari,Scarf,Accessories,3,170536,511608
+2025-04-13,Dewi,Belt,Accessories,3,214998,644994
+2025-05-24,Rina,Pleated Skirt,Skirt,2,202282,404564
+2025-02-01,Laras,Blazer,Outerwear,2,116930,233860
+2025-01-25,Nadia,Linen Blouse,Blouse,4,241317,965268
+2025-04-18,Citra,Maxi Dress,Dress,3,231437,694311
+2025-03-22,Melani,Belt,Accessories,2,210617,421234
+2025-05-12,Elsa,Blazer,Outerwear,3,210382,631146
+2025-01-06,Sinta,Mini Skirt,Skirt,5,199860,999300
+2025-03-03,Melani,Highwaist Pants,Pants,3,92755,278265
+2025-01-13,Bella,Blazer,Outerwear,5,203361,1016805
+2025-03-15,Mira,Casual Dress,Dress,1,192965,192965
+2025-02-04,Laras,Scarf,Accessories,3,185710,557130
+2025-04-04,Nadia,Mini Skirt,Skirt,1,229495,229495
+2025-05-24,Melani,Pleated Skirt,Skirt,5,155655,778275
+2025-01-19,Vina,Cardigan,Outerwear,4,224141,896564
+2025-03-13,Sari,Culottes,Pants,5,111145,555725
+2025-02-02,Rina,Mini Skirt,Skirt,3,168889,506667
+2025-05-23,Anisa,Belt,Accessories,2,132181,264362
+2025-06-04,Lia,Mini Skirt,Skirt,5,90552,452760
+2025-01-12,Nadia,Maxi Dress,Dress,3,204189,612567
+2025-05-13,Elsa,Maxi Dress,Dress,5,215136,1075680
+2025-02-05,Tari,Highwaist Pants,Pants,3,122598,367794
+2025-04-11,Sari,Scarf,Accessories,3,235641,706923
+2025-03-28,Lia,Cardigan,Outerwear,5,208410,1042050
+2025-05-25,Bella,Blazer,Outerwear,1,176562,176562
+2025-03-26,Rina,Mini Skirt,Skirt,5,160655,803275
+2025-06-26,Ayu,Highwaist Pants,Pants,4,149607,598428
+2025-06-17,Nia,Highwaist Pants,Pants,2,93462,186924
+2025-05-30,Gita,Maxi Dress,Dress,5,244895,1224475
+2025-06-08,Vina,Maxi Dress,Dress,2,88276,176552
+2025-05-27,Rina,Silk Blouse,Blouse,1,195615,195615
+2025-03-22,Dian,Maxi Dress,Dress,4,133448,533792
+2025-04-16,Lia,Belt,Accessories,5,203628,1018140
+2025-01-16,Dewi,Cardigan,Outerwear,2,227033,454066
+2025-03-25,Gita,Cardigan,Outerwear,4,162248,648992
+2025-02-14,Elsa,Cardigan,Outerwear,3,223202,669606
+2025-04-01,Laras,Highwaist Pants,Pants,4,130400,521600
+2025-03-05,Laras,Cardigan,Outerwear,3,138947,416841
+2025-03-18,Bella,Scarf,Accessories,2,208189,416378
+2025-03-23,Gita,Pleated Skirt,Skirt,5,151685,758425
+2025-03-15,Rina,Highwaist Pants,Pants,5,179534,897670
+2025-04-12,Anisa,Belt,Accessories,2,156140,312280
+2025-01-11,Bella,Scarf,Accessories,1,170797,170797
+2025-04-24,Laras,Scarf,Accessories,4,136095,544380
+2025-02-21,Mira,Linen Blouse,Blouse,5,151203,756015
+2025-02-05,Rina,Highwaist Pants,Pants,5,142726,713630
+2025-03-04,Nadia,Culottes,Pants,5,139158,695790
+2025-06-13,Citra,Casual Dress,Dress,1,188344,188344
+2025-03-26,Gita,Party Dress,Dress,2,81358,162716
+2025-05-21,Putri,Mini Skirt,Skirt,4,205160,820640
+2025-06-16,Melani,Belt,Accessories,3,164192,492576
+2025-03-15,Nadia,Belt,Accessories,1,230505,230505
+2025-03-01,Mira,Scarf,Accessories,1,125892,125892
+2025-04-17,Putri,Casual Dress,Dress,4,209861,839444
+2025-02-17,Bella,Casual Dress,Dress,1,158221,158221
+2025-05-26,Sari,Party Dress,Dress,3,154596,463788
+2025-04-27,Mira,Cardigan,Outerwear,4,115179,460716
+2025-05-10,Elsa,Linen Blouse,Blouse,2,109529,219058
+2025-03-26,Putri,Scarf,Accessories,4,249944,999776
+2025-03-07,Putri,Casual Dress,Dress,3,157338,472014
+2025-05-26,Melani,Maxi Dress,Dress,5,247438,1237190
+2025-04-14,Dian,Cardigan,Outerwear,3,102737,308211
+2025-04-13,Rina,Maxi Dress,Dress,2,205161,410322
+2025-03-24,Citra,Casual Dress,Dress,3,180551,541653
+2025-03-02,Elsa,Belt,Accessories,3,166409,499227
+2025-03-19,Nia,Scarf,Accessories,5,82997,414985
+2025-03-08,Anisa,Scarf,Accessories,2,96285,192570
+2025-06-20,Rina,Blazer,Outerwear,3,121868,365604
+2025-04-14,Lia,Scarf,Accessories,3,110779,332337
+2025-06-13,Bella,Pleated Skirt,Skirt,5,137894,689470
+2025-02-26,Dewi,Blazer,Outerwear,2,199269,398538
+2025-06-05,Anisa,Mini Skirt,Skirt,5,203424,1017120
+2025-05-18,Melani,Belt,Accessories,2,236189,472378
+2025-01-21,Lia,Blazer,Outerwear,5,174839,874195
+2025-01-20,Nia,Party Dress,Dress,1,223562,223562
+2025-05-10,Melani,Highwaist Pants,Pants,5,119282,596410
+2025-02-12,Tari,Cardigan,Outerwear,4,110471,441884
+2025-06-24,Melani,Scarf,Accessories,5,208143,1040715
+2025-01-24,Lia,Blazer,Outerwear,1,198864,198864
+2025-02-03,Lia,Mini Skirt,Skirt,4,227825,911300
+2025-01-15,Mira,Blazer,Outerwear,3,85706,257118
+2025-04-12,Laras,Casual Dress,Dress,2,231600,463200
+2025-01-19,Nadia,Mini Skirt,Skirt,3,96714,290142
+2025-05-19,Nadia,Party Dress,Dress,4,88319,353276
+2025-03-15,Dian,Maxi Dress,Dress,2,248171,496342
+2025-06-15,Dian,Pleated Skirt,Skirt,4,197581,790324
+2025-04-07,Vina,Party Dress,Dress,5,114862,574310
+2025-06-17,Anisa,Party Dress,Dress,2,220839,441678
+2025-04-11,Lia,Maxi Dress,Dress,2,80910,161820
+2025-01-06,Bella,Blazer,Outerwear,5,191182,955910
+2025-05-17,Vina,Silk Blouse,Blouse,2,200750,401500
+2025-03-30,Dewi,Linen Blouse,Blouse,2,109581,219162
+2025-01-09,Dian,Highwaist Pants,Pants,1,143089,143089
+2025-02-22,Sinta,Party Dress,Dress,5,88801,444005
+2025-04-25,Sari,Culottes,Pants,1,144155,144155
+2025-01-12,Vina,Blazer,Outerwear,2,221494,442988
+2025-02-25,Nadia,Maxi Dress,Dress,5,155828,779140
+2025-03-01,Nia,Pleated Skirt,Skirt,5,236740,1183700
+2025-06-22,Tari,Silk Blouse,Blouse,3,117554,352662
+2025-06-19,Lia,Silk Blouse,Blouse,4,158774,635096
+2025-03-12,Nadia,Cardigan,Outerwear,5,125910,629550
+2025-06-10,Dian,Cardigan,Outerwear,4,92290,369160
+2025-03-30,Vina,Belt,Accessories,5,163554,817770
+2025-06-28,Dian,Mini Skirt,Skirt,2,158613,317226
+2025-04-07,Putri,Belt,Accessories,5,204130,1020650
+2025-03-03,Citra,Linen Blouse,Blouse,2,201379,402758
+2025-01-15,Mira,Mini Skirt,Skirt,4,226089,904356
+2025-05-16,Dewi,Mini Skirt,Skirt,2,146845,293690
+2025-02-22,Tari,Culottes,Pants,1,197908,197908
+2025-04-05,Sinta,Cardigan,Outerwear,2,93510,187020
+2025-03-10,Vina,Culottes,Pants,5,238052,1190260
+2025-01-11,Sinta,Silk Blouse,Blouse,5,226499,1132495
+2025-02-25,Gita,Silk Blouse,Blouse,3,159478,478434
+2025-01-04,Melani,Silk Blouse,Blouse,1,205546,205546
+2025-03-04,Sari,Scarf,Accessories,2,183974,367948
+2025-03-03,Mira,Pleated Skirt,Skirt,3,179788,539364
+2025-04-30,Mira,Culottes,Pants,3,160851,482553
+2025-03-08,Anisa,Cardigan,Outerwear,4,202160,808640
+2025-01-26,Gita,Belt,Accessories,3,133248,399744
+2025-04-05,Tari,Mini Skirt,Skirt,1,227462,227462
+2025-02-26,Dewi,Casual Dress,Dress,3,225047,675141
+2025-05-30,Nia,Scarf,Accessories,4,157382,629528
+2025-02-09,Melani,Pleated Skirt,Skirt,2,179572,359144
+2025-05-26,Citra,Blazer,Outerwear,5,168490,842450
+2025-03-07,Gita,Scarf,Accessories,4,200803,803212
+2025-02-13,Anisa,Maxi Dress,Dress,2,223273,446546
+2025-05-06,Putri,Cardigan,Outerwear,1,217348,217348
+2025-01-09,Sinta,Culottes,Pants,1,81673,81673
+2025-04-16,Dewi,Culottes,Pants,2,97817,195634
+2025-02-08,Ayu,Silk Blouse,Blouse,5,199540,997700
+2025-04-06,Nadia,Highwaist Pants,Pants,5,206669,1033345
+2025-06-18,Gita,Casual Dress,Dress,1,219516,219516
+2025-05-22,Dian,Casual Dress,Dress,1,218783,218783
+2025-03-12,Mira,Linen Blouse,Blouse,1,211652,211652
+2025-06-28,Dian,Belt,Accessories,2,108053,216106
+2025-01-25,Lia,Maxi Dress,Dress,2,130313,260626
+2025-06-08,Lia,Linen Blouse,Blouse,3,150077,450231
+2025-04-12,Sinta,Pleated Skirt,Skirt,4,200323,801292
+2025-05-25,Citra,Scarf,Accessories,2,158636,317272
+2025-06-25,Sinta,Culottes,Pants,1,104510,104510
+2025-04-14,Vina,Mini Skirt,Skirt,5,204781,1023905
+2025-01-15,Ayu,Scarf,Accessories,2,101675,203350
+2025-05-08,Dian,Culottes,Pants,3,228335,685005
+2025-01-25,Lia,Casual Dress,Dress,2,135421,270842
+2025-06-27,Nia,Blazer,Outerwear,3,92205,276615
+2025-01-20,Laras,Cardigan,Outerwear,5,88625,443125
+2025-02-15,Tari,Casual Dress,Dress,2,233887,467774
+2025-02-06,Vina,Party Dress,Dress,3,122585,367755
+2025-05-25,Citra,Highwaist Pants,Pants,4,221705,886820
+2025-03-26,Vina,Belt,Accessories,2,100559,201118
+2025-05-09,Anisa,Casual Dress,Dress,1,194580,194580
+2025-03-01,Sinta,Pleated Skirt,Skirt,5,240921,1204605
+2025-06-02,Vina,Belt,Accessories,3,87766,263298
+2025-06-12,Laras,Belt,Accessories,4,208608,834432
+2025-02-28,Anisa,Cardigan,Outerwear,4,193206,772824
+2025-02-17,Nia,Culottes,Pants,4,102464,409856
+2025-06-08,Bella,Belt,Accessories,2,99269,198538
+2025-01-22,Laras,Maxi Dress,Dress,4,246173,984692
+2025-02-09,Vina,Pleated Skirt,Skirt,3,107931,323793
+2025-01-24,Ayu,Linen Blouse,Blouse,4,174350,697400
+2025-03-11,Rina,Maxi Dress,Dress,1,129123,129123
+2025-04-21,Elsa,Cardigan,Outerwear,5,214333,1071665
+2025-04-15,Rina,Casual Dress,Dress,1,172776,172776
+2025-05-22,Sinta,Highwaist Pants,Pants,5,165047,825235
+2025-04-09,Ayu,Linen Blouse,Blouse,4,181659,726636
+2025-01-22,Mira,Silk Blouse,Blouse,5,216604,1083020
+2025-02-13,Vina,Maxi Dress,Dress,2,150495,300990
+2025-03-19,Laras,Blazer,Outerwear,2,96585,193170
+2025-02-12,Dian,Linen Blouse,Blouse,4,158578,634312
+2025-05-04,Sinta,Pleated Skirt,Skirt,3,144642,433926
+2025-06-10,Gita,Highwaist Pants,Pants,5,131261,656305
+2025-04-28,Rina,Maxi Dress,Dress,3,81774,245322
+2025-04-12,Tari,Highwaist Pants,Pants,4,166387,665548
+2025-04-23,Tari,Mini Skirt,Skirt,5,115684,578420
+2025-03-18,Tari,Highwaist Pants,Pants,2,205569,411138
+2025-03-22,Putri,Mini Skirt,Skirt,3,156401,469203
+2025-06-27,Gita,Highwaist Pants,Pants,2,165429,330858
+2025-04-07,Laras,Belt,Accessories,4,175686,702744
+2025-01-30,Nia,Silk Blouse,Blouse,5,223033,1115165
+2025-02-16,Mira,Casual Dress,Dress,4,134958,539832
+2025-04-23,Bella,Scarf,Accessories,1,187254,187254
+2025-06-22,Gita,Maxi Dress,Dress,3,143444,430332
+2025-03-06,Dewi,Scarf,Accessories,4,178825,715300
+2025-01-19,Elsa,Highwaist Pants,Pants,4,232631,930524
+2025-04-13,Mira,Cardigan,Outerwear,4,222513,890052
+2025-01-10,Anisa,Scarf,Accessories,5,235666,1178330
+2025-06-13,Sinta,Party Dress,Dress,2,173063,346126
+2025-02-12,Sari,Casual Dress,Dress,5,249091,1245455
+2025-06-23,Vina,Belt,Accessories,3,192841,578523
+2025-01-28,Ayu,Party Dress,Dress,3,138196,414588
+2025-05-11,Lia,Cardigan,Outerwear,5,230794,1153970
+2025-02-26,Elsa,Pleated Skirt,Skirt,4,201389,805556
+2025-06-23,Nia,Scarf,Accessories,5,119516,597580
+2025-03-30,Ayu,Blazer,Outerwear,1,157445,157445
+2025-04-17,Sinta,Party Dress,Dress,2,171312,342624
+2025-03-21,Tari,Blazer,Outerwear,2,216607,433214
+2025-05-04,Anisa,Blazer,Outerwear,1,194862,194862
+2025-06-28,Elsa,Pleated Skirt,Skirt,1,158712,158712
+2025-01-12,Rina,Casual Dress,Dress,3,249861,749583
+2025-01-28,Putri,Scarf,Accessories,2,215264,430528
+2025-02-14,Mira,Maxi Dress,Dress,3,226761,680283
+2025-04-20,Elsa,Silk Blouse,Blouse,4,245087,980348
+2025-02-17,Putri,Culottes,Pants,4,183699,734796
+2025-01-08,Sari,Silk Blouse,Blouse,4,235242,940968
+2025-04-20,Vina,Casual Dress,Dress,2,133945,267890
+2025-03-13,Sinta,Highwaist Pants,Pants,1,220742,220742
+2025-02-17,Anisa,Pleated Skirt,Skirt,2,199944,399888
+2025-01-30,Laras,Culottes,Pants,4,218337,873348
+2025-06-13,Tari,Highwaist Pants,Pants,4,240250,961000
+2025-04-11,Nia,Party Dress,Dress,3,172270,516810
+2025-04-28,Sari,Maxi Dress,Dress,3,241083,723249
+2025-06-01,Sinta,Culottes,Pants,2,162099,324198
+2025-01-31,Citra,Linen Blouse,Blouse,1,127984,127984
+2025-04-06,Dewi,Cardigan,Outerwear,4,189638,758552
+2025-06-02,Dewi,Highwaist Pants,Pants,4,190897,763588
+2025-02-17,Gita,Culottes,Pants,5,249151,1245755
+2025-02-14,Mira,Maxi Dress,Dress,4,155716,622864
+2025-02-05,Putri,Pleated Skirt,Skirt,4,242374,969496
+2025-01-14,Anisa,Casual Dress,Dress,4,115791,463164
+2025-02-19,Vina,Cardigan,Outerwear,5,209753,1048765
+2025-04-15,Gita,Mini Skirt,Skirt,4,208109,832436
+2025-02-12,Sinta,Highwaist Pants,Pants,1,137810,137810
+2025-03-16,Nadia,Linen Blouse,Blouse,2,220930,441860
+2025-03-15,Putri,Belt,Accessories,4,228281,913124
+2025-05-07,Mira,Cardigan,Outerwear,1,230133,230133
+2025-01-30,Laras,Belt,Accessories,5,176170,880850
+2025-05-19,Nadia,Belt,Accessories,4,223223,892892
+2025-02-25,Dian,Party Dress,Dress,2,158042,316084
+2025-01-09,Elsa,Linen Blouse,Blouse,3,102802,308406
+2025-04-23,Rina,Belt,Accessories,2,135018,270036
+2025-05-31,Anisa,Scarf,Accessories,5,245877,1229385
+2025-04-20,Putri,Highwaist Pants,Pants,2,134164,268328
+2025-02-22,Nadia,Highwaist Pants,Pants,3,219534,658602
+2025-03-13,Sari,Cardigan,Outerwear,2,164843,329686
+2025-06-30,Bella,Linen Blouse,Blouse,5,150082,750410
+2025-05-12,Rina,Maxi Dress,Dress,4,95541,382164
+2025-03-12,Dewi,Scarf,Accessories,2,145451,290902
+2025-02-07,Tari,Silk Blouse,Blouse,4,208308,833232
+2025-02-06,Nia,Culottes,Pants,3,244577,733731
+2025-04-17,Vina,Blazer,Outerwear,1,246101,246101
+2025-01-24,Vina,Cardigan,Outerwear,3,176749,530247
+2025-04-27,Gita,Pleated Skirt,Skirt,5,80648,403240
+2025-01-24,Elsa,Culottes,Pants,3,96601,289803
+2025-05-17,Vina,Silk Blouse,Blouse,4,135535,542140
+2025-05-07,Laras,Pleated Skirt,Skirt,3,168540,505620
+2025-05-21,Nia,Maxi Dress,Dress,5,207228,1036140
+2025-03-29,Nadia,Casual Dress,Dress,1,244149,244149
+2025-04-28,Ayu,Party Dress,Dress,2,195680,391360
+2025-04-27,Ayu,Mini Skirt,Skirt,2,114580,229160
+2025-06-16,Bella,Maxi Dress,Dress,3,104468,313404
+2025-06-17,Anisa,Linen Blouse,Blouse,1,177476,177476
+2025-06-20,Putri,Casual Dress,Dress,4,243998,975992
+2025-03-20,Citra,Mini Skirt,Skirt,1,104951,104951
+2025-01-01,Melani,Blazer,Outerwear,1,114786,114786
+2025-06-01,Citra,Cardigan,Outerwear,4,82434,329736
+2025-01-03,Tari,Party Dress,Dress,4,114648,458592
+2025-05-03,Sinta,Silk Blouse,Blouse,4,103417,413668
+2025-01-27,Rina,Pleated Skirt,Skirt,3,158447,475341
