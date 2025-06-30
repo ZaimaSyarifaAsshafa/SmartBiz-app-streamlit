@@ -124,34 +124,36 @@ if "info" not in st.session_state:
 
 # ---------- HALAMAN: HOME ---------- #
 def home_page():
-    st.markdown("""
-        <div style="padding: 30px 20px 10px 20px; background: linear-gradient(to right, #e3f2fd, #ffffff); border-radius: 10px;">
-            <div style="display: flex; align-items: center;">
-                <img src="https://cdn-icons-png.flaticon.com/512/6062/6062646.png" width="70" style="margin-right: 20px;">
-                <div>
-                    <h1 style="margin-bottom: 0; font-family: 'Segoe UI', sans-serif; color: #003366;">SmartBiz</h1>
-                    <p style="margin-top: 0; font-size: 18px; color: #4b6e91;">Solusi Analytics Sederhana untuk Bisnis Cerdas 💡</p>
-                </div>
-            </div>
-        </div>
-    """, unsafe_allow_html=True)
+    col1, col2 = st.columns([1, 6])
+    with col1:
+        st.image("https://cdn-icons-png.flaticon.com/512/6062/6062646.png", width=70)
 
-    col1, col2 = st.columns([6, 1])
     with col2:
-        if st.button("❔ Panduan"):
-            st.session_state["show_guide"] = True
+        st.markdown("""
+            <div style="margin-bottom: 0; font-size: 36px; font-family: 'Segoe UI', sans-serif; color: #003366;">
+                <b>SmartBiz</b>
+            </div>
+            <div style="margin-top: 0; font-size: 18px; color: #4b6e91;">
+                Solusi Analytics Sederhana untuk Bisnis Cerdas 💡
+            </div>
+        """, unsafe_allow_html=True)
 
+    # Tombol Panduan
+    if st.button("❔ Panduan"):
+        st.session_state["show_guide"] = True
+
+    # Panduan Expandable
     if st.session_state.get("show_guide", False):
         st.markdown("---")
         with st.expander("📘 Panduan Penggunaan", expanded=True):
             st.markdown("""
-            <div style="font-size: 16px;">
-                <b>Langkah-langkah:</b><br>
-                1. Isi informasi usaha: <i>nama, jenis usaha, tahun berdiri</i>.<br>
-                2. Upload file data transaksi (<code>.csv</code>/<code>.xlsx</code>) sesuai format.<br>
-                3. Jika format salah, gunakan <b>template</b> yang disediakan.<br>
-                4. Klik tombol <b>Mulai Analisis!</b> untuk melihat dashboard analisis.
-            </div>
+                <div style="font-size: 16px;">
+                    <b>Langkah-langkah:</b><br>
+                    1. Isi informasi usaha: <i>nama, jenis usaha, tahun berdiri</i>.<br>
+                    2. Upload file data transaksi (<code>.csv</code>/<code>.xlsx</code>) sesuai format.<br>
+                    3. Jika format salah, gunakan <b>template</b> yang disediakan.<br>
+                    4. Klik tombol <b>Mulai Analisis!</b> untuk melihat dashboard analisis.
+                </div>
             """, unsafe_allow_html=True)
 
             if st.button("❌ Tutup Panduan"):
