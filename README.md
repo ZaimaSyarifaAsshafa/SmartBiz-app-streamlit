@@ -98,7 +98,8 @@ streamlit run app.py
 
 ## 🚀 Link Deploy Aplikasi
 🔗 Klik di sini untuk mencoba aplikasi SmartBiz: https://smartbiz-app-project.streamlit.app/
-📁 Gunakan file [Velveta Wear.xlsx](./data/Velveta Wear.xlsx) untuk simulasi analisis di aplikasi.
+
+📁 Gunakan file [Velveta Wear.xlsx]([./data/Velveta Wear.xlsx](https://github.com/ZaimaSyarifaAsshafa/SmartBiz-app-streamlit/blob/57bb3e4dd8d8282b77eab9b0c95a182a2a930024/data/Velveta%20Wear.xlsx)) untuk simulasi analisis di aplikasi.
 
 ---
 
