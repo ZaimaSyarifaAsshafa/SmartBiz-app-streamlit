@@ -222,8 +222,15 @@ def home_page():
     st.markdown("""<footer style='text-align: center; padding: 10px;'><p>© 2025 SmartBiz by Zai. All rights reserved.</p></footer>""", unsafe_allow_html=True)
 
 # ---------- HALAMAN: DASHBOARD ---------- #
-# ---------- HEADER STYLE ---------- #
+def plot_to_base64(fig):
+    img_bytes = fig.to_image(format="png", width=800, height=400)
+    return base64.b64encode(img_bytes).decode("utf-8")
+
+def img_tag(fig):
+    return f'<img src="data:image/png;base64,{plot_to_base64(fig)}" style="width:100%; margin-bottom:20px;" />'
+
 def dashboard_page():
+    # ---------- HEADER ---------- #
     st.markdown("""
         <div class="header-container">
             <div class="header-content">
@@ -259,15 +266,7 @@ def dashboard_page():
         }
         </style>
     """, unsafe_allow_html=True)
-
-def plot_to_base64(fig):
-    img_bytes = fig.to_image(format="png", width=800, height=400)
-    return base64.b64encode(img_bytes).decode("utf-8")
-
-def img_tag(fig):
-    return f'<img src="data:image/png;base64,{plot_to_base64(fig)}" style="width:100%; margin-bottom:20px;" />'
-
-def dashboard_page():
+    
     info = st.session_state.info
     df = st.session_state.df.copy()
 
