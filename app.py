@@ -18,7 +18,49 @@ st.set_page_config(page_title="SmartBiz", layout="wide", initial_sidebar_state="
 blue_sky = "#E2F9FF"
 st.markdown(f"<style>body {{ background-color: {blue_sky}; }}</style>", unsafe_allow_html=True)
 
-# Style untuk form input
+# ---------- UI STYLE ---------- #
+st.markdown("""
+<style>
+    /* Font Family Utama - Gunakan font sans-serif profesional */
+    html, body, [class*="css"]  {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #1a2e44;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: 'Segoe UI Semibold', Tahoma, Geneva, Verdana, sans-serif;
+        color: #1a2e44;
+        font-weight: 700;
+    }
+
+    /* Font untuk label dan teks info */
+    label, .css-1cpxqw2 {
+        font-family: 'Segoe UI', sans-serif;
+        color: #2a3b4c;
+        font-weight: 500;
+    }
+
+    /* Metric dan angka */
+    .element-container .metric-container .big-number {
+        font-size: 28px !important;
+        font-weight: bold !important;
+    }
+
+    .metric-label {
+        font-size: 14px !important;
+        font-weight: 500;
+        color: #4b5c6b;
+    }
+
+    /* Teks biasa */
+    p, span, div {
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 16px;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# ---------- FORM STYLE ---------- #
 st.markdown("""
     <style>
     /* Umum untuk semua input */
@@ -87,8 +129,8 @@ st.markdown("""
         }
 
         .header-title {
-            font-size: 56px;
-            font-weight: 700;
+            font-size: 64px;
+            font-weight: 900;
             color: #1a2e44;
             margin: 0;
         }
@@ -225,9 +267,6 @@ def img_tag(fig):
 def dashboard_page():
     info = st.session_state.info
     df = st.session_state.df.copy()
-    
-    st.markdown("## 📊 Dashboard Analisis Bisnis - SmartBiz")
-    st.markdown("Berikut ini analisis bisnis kamu")
 
     # --- Informasi Usaha
     st.markdown("### 📋 Informasi Usaha")
