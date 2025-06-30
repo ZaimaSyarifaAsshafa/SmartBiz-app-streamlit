@@ -124,7 +124,7 @@ if "info" not in st.session_state:
 
 # ---------- HALAMAN: HOME ---------- #
 def home_page():
-    col1, col2 = st.columns([1, 6])
+    col1, col2, col3 = st.columns([1, 6])
     with col1:
         st.image("https://cdn-icons-png.flaticon.com/512/6062/6062646.png", width=70)
 
@@ -139,8 +139,9 @@ def home_page():
         """, unsafe_allow_html=True)
 
     # Tombol Panduan
-    if st.button("❔ Panduan"):
-        st.session_state["show_guide"] = True
+    with col3:
+        if st.button("❔ Panduan"):
+            st.session_state["show_guide"] = True
 
     # Panduan Expandable
     if st.session_state.get("show_guide", False):
@@ -158,7 +159,7 @@ def home_page():
 
             if st.button("❌ Tutup Panduan"):
                 st.session_state["show_guide"] = False
-                
+
     # UPLOAD
     st.subheader("📤 Upload File Data Transaksi")
     file = st.file_uploader("Unggah file (.csv / .xlsx)", type=["csv", "xlsx"])
