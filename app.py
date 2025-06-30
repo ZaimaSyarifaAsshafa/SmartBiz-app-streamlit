@@ -18,7 +18,7 @@ st.set_page_config(page_title="SmartBiz", layout="wide", initial_sidebar_state="
 blue_sky = "#E2F9FF"
 st.markdown(f"<style>body {{ background-color: {blue_sky}; }}</style>", unsafe_allow_html=True)
 
-# Custom style untuk form input
+# Style untuk form input
 st.markdown("""
     <style>
     /* Umum untuk semua input */
@@ -64,6 +64,52 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# ---------- HEADER UI STYLE ---------- #
+st.markdown("""
+    <style>
+        .header-container {
+            background: linear-gradient(to bottom, #e0f0ff, #ffffff);
+            padding: 30px 30px 20px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-content img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .header-title {
+            font-size: 30px;
+            font-weight: 700;
+            color: #1a2e44;
+            margin: 0;
+        }
+
+        .header-subtitle {
+            font-size: 16px;
+            color: #5e6a75;
+            margin: 4px 0 0 0;
+        }
+    </style>
+
+    <div class="header-container">
+        <div class="header-content">
+            <img src="https://cdn-icons-png.flaticon.com/512/6062/6062646.png" alt="Business Icon">
+            <div>
+                <p class="header-title">Dashboard Analisis Bisnis - SmartBiz</p>
+                <p class="header-subtitle">Berikut ini analisis bisnis kamu</p>
+            </div>
+        </div>
+    </div>
+""", unsafe_allow_html=True)
 
 # ---------- SESSION STATE ---------- #
 if "generating_pdf" not in st.session_state:
