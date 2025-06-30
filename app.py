@@ -106,53 +106,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ---------- HEADER UI STYLE ---------- #
-st.markdown("""
-    <style>
-        .header-container {
-            background: linear-gradient(to bottom, #e0f0ff, #ffffff);
-            padding: 30px 30px 20px 30px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .header-content img {
-            width: 60px;
-            height: 60px;
-        }
-
-        .header-title {
-            font-size: 64px;
-            font-weight: 900;
-            color: #1a2e44;
-            margin: 0;
-        }
-
-        .header-subtitle {
-            font-size: 16px;
-            color: #5e6a75;
-            margin: 4px 0 0 0;
-        }
-    </style>
-
-    <div class="header-container">
-        <div class="header-content">
-            <img src="https://cdn-icons-png.flaticon.com/512/6062/6062646.png" alt="Business Icon">
-            <div>
-                <p class="header-title">Dashboard Analisis Bisnis - SmartBiz</p>
-                <p class="header-subtitle">Berikut ini analisis bisnis kamu</p>
-            </div>
-        </div>
-    </div>
-""", unsafe_allow_html=True)
-
 # ---------- SESSION STATE ---------- #
 if "generating_pdf" not in st.session_state:
     st.session_state.generating_pdf = False
@@ -171,13 +124,19 @@ if "info" not in st.session_state:
 
 # ---------- HALAMAN: HOME ---------- #
 def home_page():
-    col1, col2 = st.columns([6, 1])
-    with col1:
-        st.markdown("""
-        <h1 style='margin-bottom:0;'>SmartBiz</h1>
-        <p style='margin-top:0; font-size:18px; color:gray;'>Solusi Analytics Sederhana untuk Bisnis Cerdas 💡</p>
-        """, unsafe_allow_html=True)
+    st.markdown("""
+        <div style="padding: 30px 20px 10px 20px; background: linear-gradient(to right, #e3f2fd, #ffffff); border-radius: 10px;">
+            <div style="display: flex; align-items: center;">
+                <img src="https://cdn-icons-png.flaticon.com/512/6062/6062646.png" width="70" style="margin-right: 20px;">
+                <div>
+                    <h1 style="margin-bottom: 0; font-family: 'Segoe UI', sans-serif; color: #003366;">SmartBiz</h1>
+                    <p style="margin-top: 0; font-size: 18px; color: #4b6e91;">Solusi Analytics Sederhana untuk Bisnis Cerdas 💡</p>
+                </div>
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
 
+    col1, col2 = st.columns([6, 1])
     with col2:
         if st.button("❔ Panduan"):
             st.session_state["show_guide"] = True
@@ -186,15 +145,18 @@ def home_page():
         st.markdown("---")
         with st.expander("📘 Panduan Penggunaan", expanded=True):
             st.markdown("""
-            **Langkah-langkah:**
-            1. Isi informasi usaha: nama, jenis usaha, tahun berdiri.
-            2. Upload file data transaksi (.csv/.xlsx) sesuai format.
-            3. Jika format salah, gunakan template yang disediakan.
-            4. Klik tombol **Mulai Analisis!** untuk melihat analisis dashboard.
-            """)
+            <div style="font-size: 16px;">
+                <b>Langkah-langkah:</b><br>
+                1. Isi informasi usaha: <i>nama, jenis usaha, tahun berdiri</i>.<br>
+                2. Upload file data transaksi (<code>.csv</code>/<code>.xlsx</code>) sesuai format.<br>
+                3. Jika format salah, gunakan <b>template</b> yang disediakan.<br>
+                4. Klik tombol <b>Mulai Analisis!</b> untuk melihat dashboard analisis.
+            </div>
+            """, unsafe_allow_html=True)
+
             if st.button("❌ Tutup Panduan"):
                 st.session_state["show_guide"] = False
-
+                
     # UPLOAD
     st.subheader("📤 Upload File Data Transaksi")
     file = st.file_uploader("Unggah file (.csv / .xlsx)", type=["csv", "xlsx"])
@@ -257,6 +219,43 @@ def home_page():
     st.markdown("""<footer style='text-align: center; padding: 10px;'><p>© 2025 SmartBiz by Zai. All rights reserved.</p></footer>""", unsafe_allow_html=True)
 
 # ---------- HALAMAN: DASHBOARD ---------- #
+# ---------- HEADER STYLE ---------- #
+st.markdown("""
+    <div class="header-container">
+        <div class="header-content">
+            <img src="https://cdn-icons-png.flaticon.com/512/6062/6062646.png" alt="Business Icon" width="60" style="margin-right: 15px;">
+            <div>
+                <p class="header-title">Dashboard Analisis Bisnis - SmartBiz</p>
+                <p class="header-subtitle">Berikut ini analisis bisnis kamu</p>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+    .header-container {
+        background: linear-gradient(to right, #cfefff, #eaf8ff);
+        padding: 20px 30px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+    }
+    .header-content {
+        display: flex;
+        align-items: center;
+    }
+    .header-title {
+        font-size: 26px;
+        font-weight: bold;
+        color: #1a3c5d;
+        margin: 0;
+    }
+    .header-subtitle {
+        font-size: 16px;
+        color: #446178;
+        margin: 0;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 def plot_to_base64(fig):
     img_bytes = fig.to_image(format="png", width=800, height=400)
     return base64.b64encode(img_bytes).decode("utf-8")
