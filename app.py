@@ -151,7 +151,7 @@ def home_page():
                 <div style="font-size: 16px;">
                     <b>Langkah-langkah:</b><br>
                     1. Isi informasi usaha: <i>nama, jenis usaha, tahun berdiri</i>.<br>
-                    2. Upload file data transaksi (<code>.csv</code>/<code>.xlsx</code>) sesuai format.<br>
+                    2. Upload file data transaksi .csv / .xlsx) sesuai format.<br>
                     3. Jika format salah, gunakan <b>template</b> yang disediakan.<br>
                     4. Klik tombol <b>Mulai Analisis!</b> untuk melihat dashboard analisis.
                 </div>
