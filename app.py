@@ -5,14 +5,12 @@ from datetime import datetime
 import plotly.express as px
 import base64
 
+# ---------- SETUP ---------- #
 st.set_page_config(
     page_title='SmartBiz UMKM Dashboard',
     page_icon="📈",  
     initial_sidebar_state="expanded"
 )
-
-# ---------- SETUP ---------- #
-st.set_page_config(page_title="SmartBiz", layout="wide", initial_sidebar_state="collapsed")
 
 # ---------- BACKGROUND STYLE ---------- #
 blue_sky = "#E2F9FF"
