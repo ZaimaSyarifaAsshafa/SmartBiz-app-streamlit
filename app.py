@@ -14,7 +14,7 @@ st.set_page_config(
 # ---------- SETUP ---------- #
 st.set_page_config(page_title="SmartBiz", layout="wide", initial_sidebar_state="collapsed")
 
-# Warna background halaman
+# ---------- BACKGROUND STYLE ---------- #
 blue_sky = "#E2F9FF"
 st.markdown(f"<style>body {{ background-color: {blue_sky}; }}</style>", unsafe_allow_html=True)
 
@@ -266,7 +266,7 @@ def dashboard_page():
         }
         </style>
     """, unsafe_allow_html=True)
-    
+
     info = st.session_state.info
     df = st.session_state.df.copy()
 
@@ -333,6 +333,7 @@ def dashboard_page():
     color_sequence = px.colors.qualitative.Pastel
 
     col1, col2 = st.columns(2)
+
     # Omset per Produk
     with col1:
         pie1 = filtered_df.groupby("Nama Produk")["Total"].sum().reset_index()
@@ -344,6 +345,7 @@ def dashboard_page():
             color_discrete_sequence=color_sequence
         )
         st.plotly_chart(fig1, use_container_width=True)
+
     # Order per Produk
     with col2:
         pie2 = filtered_df.groupby("Nama Produk")["Jumlah"].sum().reset_index()
@@ -461,7 +463,6 @@ def dashboard_page():
     produk_pareto_tabel.columns = ["Nama Produk", "Total"]
     produk_pareto_tabel["Persen"] = (produk_pareto_tabel["Total"] / pareto_produk.sum()) * 100
     produk_pareto_tabel = produk_pareto_tabel.sort_values("Total", ascending=False)
-
     # --- Pareto Customer
     pareto_customer = filtered_df.groupby("Nama Customer")["Total"].sum().sort_values(ascending=False)
     pareto_customer_cumsum_pct = pareto_customer.cumsum() / pareto_customer.sum()
@@ -488,7 +489,7 @@ def dashboard_page():
     customer_pareto_df["Omset"] = customer_pareto_df["Omset"].round(0).astype(int)
     customer_pareto_df["%"] = customer_pareto_df["%"].round(1)
 
-    # --- INsight Pareto
+    # --- Insight Pareto
     st.markdown("### 📈 Analisis Pareto")
     col1, col2 = st.columns(2)
     with col1:
